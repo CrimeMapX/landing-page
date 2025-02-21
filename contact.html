@@ -42,6 +42,9 @@
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
 
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <!-- =======================================================
   * Template Name: Logis
   * Template URL: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/
@@ -65,42 +68,37 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li>
-              <a href="index.html">Home<br /></a>
+              <a href="index.html">Inicio</a>
             </li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="index.html#features">Características</a></li>
             <li class="dropdown">
-              <a href="#"
-                ><span>Dropdown</span>
-                <i class="bi bi-chevron-down toggle-dropdown"></i
+              <a href="index.html#service"
+                ><span>Servicios</span
+                ><i class="bi bi-chevron-down toggle-dropdown"></i
               ></a>
               <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown">
-                  <a href="#"
-                    ><span>Deep Dropdown</span>
-                    <i class="bi bi-chevron-down toggle-dropdown"></i
-                  ></a>
-                  <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    <li><a href="#">Deep Dropdown 3</a></li>
-                    <li><a href="#">Deep Dropdown 4</a></li>
-                    <li><a href="#">Deep Dropdown 5</a></li>
-                  </ul>
+                <li>
+                  <a href="index.html#featured-services"
+                    >Servicios Destacados</a
+                  >
                 </li>
-                <li><a href="#">Dropdown 2</a></li>
-                <li><a href="#">Dropdown 3</a></li>
-                <li><a href="#">Dropdown 4</a></li>
+                <li><a href="index.html#service">Todos los Servicios</a></li>
+                <li><a href="index.html#pricing">Precios</a></li>
               </ul>
             </li>
-            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="index.html#about">Sobre Nosotros</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="contact.html" class="active">Contacto</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="btn-getstarted" href="get-a-quote.html">Get a Quote</a>
+        <a
+          class="btn-getstarted"
+          href="https://app.crimemapx.com"
+          target="_blank"
+          >Acceder a la app</a
+        >
       </div>
     </header>
 
@@ -112,15 +110,15 @@
         style="background-image: url(assets/img/page-title-bg.jpg)"
       >
         <div class="container position-relative">
-          <h1>Contact</h1>
+          <h1>Contacto</h1>
           <p>
-            Esse dolorum voluptatum ullam est sint nemo et est ipsa porro
-            placeat quibusdam quia assumenda numquam molestias.
+            ¿Necesita información sobre nuestros servicios de mapeo de seguridad
+            o tiene alguna pregunta? Nuestro equipo está aquí para ayudarle.
           </p>
           <nav class="breadcrumbs">
             <ol>
-              <li><a href="index.html">Home</a></li>
-              <li class="current">Contact</li>
+              <li><a href="index.html">Inicio</a></li>
+              <li class="current">Contacto</li>
             </ol>
           </nav>
         </div>
@@ -130,63 +128,10 @@
       <!-- Contact Section -->
       <section id="contact" class="contact section">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-            <iframe
-              style="border: 0; width: 100%; height: 270px"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
-              frameborder="0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-          <!-- End Google Maps -->
-
           <div class="row gy-4">
-            <div class="col-lg-4">
-              <div
-                class="info-item d-flex"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
-                </div>
-              </div>
-              <!-- End Info Item -->
-
-              <div
-                class="info-item d-flex"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55</p>
-                </div>
-              </div>
-              <!-- End Info Item -->
-
-              <div
-                class="info-item d-flex"
-                data-aos="fade-up"
-                data-aos-delay="500"
-              >
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email Us</h3>
-                  <p>info@example.com</p>
-                </div>
-              </div>
-              <!-- End Info Item -->
-            </div>
-
-            <div class="col-lg-8">
+            <div class="col-lg-12">
               <form
-                action="forms/contact.php"
+                action="https://formsubmit.co/e040bed3b1ace5bf780f4352fc682e22"
                 method="post"
                 class="php-email-form"
                 data-aos="fade-up"
@@ -198,7 +143,7 @@
                       type="text"
                       name="name"
                       class="form-control"
-                      placeholder="Your Name"
+                      placeholder="Nombre Completo"
                       required=""
                     />
                   </div>
@@ -208,8 +153,17 @@
                       type="email"
                       class="form-control"
                       name="email"
-                      placeholder="Your Email"
+                      placeholder="Correo Electrónico"
                       required=""
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="company"
+                      placeholder="Empresa (Opcional)"
                     />
                   </div>
 
@@ -218,7 +172,7 @@
                       type="text"
                       class="form-control"
                       name="subject"
-                      placeholder="Subject"
+                      placeholder="Asunto"
                       required=""
                     />
                   </div>
@@ -228,19 +182,28 @@
                       class="form-control"
                       name="message"
                       rows="6"
-                      placeholder="Message"
+                      placeholder="Mensaje"
                       required=""
                     ></textarea>
                   </div>
 
-                  <div class="col-md-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">
-                      Your message has been sent. Thank you!
+                  <div
+                    class="flex gap-3 justify-content-center col-md-12 text-center align-items-center"
+                  >
+                    <!-- Add reCAPTCHA -->
+                    <!-- <div
+                      class="g-recaptcha mb-3"
+                      data-sitekey="YOUR_SITE_KEY"
+                      style="display: inline-block"
+                    ></div>-->
+                    <div>
+                      <div class="loading">Cargando</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">
+                        ¡Su mensaje ha sido enviado. Gracias!
+                      </div>
+                      <button type="submit">Enviar Mensaje</button>
                     </div>
-
-                    <button type="submit">Send Message</button>
                   </div>
                 </div>
               </form>
@@ -252,7 +215,7 @@
       <!-- /Contact Section -->
     </main>
 
-    <footer id="footer" class="footer dark-background">
+    <!-- <footer id="footer" class="footer dark-background">
       <div class="container footer-top">
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-about">
@@ -316,7 +279,7 @@
           <span>All Rights Reserved</span>
         </p>
       </div>
-    </footer>
+    </footer>-->
 
     <!-- Scroll Top -->
     <a

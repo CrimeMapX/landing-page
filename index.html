@@ -3,9 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Index - CrimeMapX</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <title>Inicio - CrimeMapX</title>
+    <meta
+      name="description"
+      content="Análisis de seguridad en España basado en datos reales de criminalidad. Ideal para inmobiliarias y viajeros."
+    />
+    <meta
+      name="keywords"
+      content="seguridad españa, índice criminalidad, mapa delincuencia, seguridad barrios, vivienda segura, turismo seguro"
+    />
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon" />
@@ -42,13 +48,32 @@
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
 
-    <!-- =======================================================
-  * Template Name: Logis
-  * Template URL: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <style>
+      .services .card a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .services .card:hover {
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      section {
+        scroll-margin-top: 80px; /* Adjust this value to match your header height */
+      }
+      [role="tablist"] li.nav-item {
+        cursor: pointer;
+      }
+      .tab-pane {
+        padding: 1rem 0;
+      }
+      #features {
+        padding-bottom: 0;
+      }
+    </style>
   </head>
 
   <body class="index-page">
@@ -58,49 +83,41 @@
       >
         <a href="index.html" class="logo d-flex align-items-center me-auto">
           <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <img src="assets/img/logo.png" alt="" />
           <h1 class="sitename">CrimeMapX</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
           <ul>
             <li>
-              <a href="index.html" class="active">Home<br /></a>
+              <a href="index.html" class="active">Inicio</a>
             </li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="#features">Características</a></li>
             <li class="dropdown">
-              <a href="#"
-                ><span>Dropdown</span>
-                <i class="bi bi-chevron-down toggle-dropdown"></i
+              <a href="#service"
+                ><span>Servicios</span
+                ><i class="bi bi-chevron-down toggle-dropdown"></i
               ></a>
               <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown">
-                  <a href="#"
-                    ><span>Deep Dropdown</span>
-                    <i class="bi bi-chevron-down toggle-dropdown"></i
-                  ></a>
-                  <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    <li><a href="#">Deep Dropdown 3</a></li>
-                    <li><a href="#">Deep Dropdown 4</a></li>
-                    <li><a href="#">Deep Dropdown 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Dropdown 2</a></li>
-                <li><a href="#">Dropdown 3</a></li>
-                <li><a href="#">Dropdown 4</a></li>
+                <li><a href="#featured-services">Servicios Destacados</a></li>
+                <li><a href="#service">Todos los Servicios</a></li>
+                <li><a href="#pricing">Precios</a></li>
               </ul>
             </li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#about">Sobre Nosotros</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="contact.html">Contacto</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="btn-getstarted" href="get-a-quote.html">Get a Quote</a>
+        <a
+          class="btn-getstarted"
+          href="https://app.crimemapx.com"
+          target="_blank"
+        >
+          Acceder a la app
+        </a>
       </div>
     </header>
 
@@ -119,12 +136,12 @@
             <div
               class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
             >
-              <h2 data-aos="fade-up">Your Lightning Fast Delivery Partner</h2>
+              <h2 data-aos="fade-up">Tu Guía de Seguridad en España</h2>
               <p data-aos="fade-up" data-aos-delay="100">
-                Facere distinctio molestiae nisi fugit tenetur repellat non
-                praesentium nesciunt optio quis sit odio nemo quisquam. eius
-                quos reiciendis eum vel eum voluptatem eum maiores eaque id
-                optio ullam occaecati odio est possimus vel reprehenderit
+                Descubre el nivel de seguridad de cualquier zona en España con
+                datos reales y actualizados. Nuestro algoritmo único proporciona
+                una puntuación de seguridad precisa, perfecta para decisiones
+                inmobiliarias y planificación de viajes.
               </p>
 
               <form
@@ -136,67 +153,36 @@
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="Your ZIP code or City. e.g. New York"
+                  placeholder="Introduce ciudad o código postal. Ej: Madrid"
                 />
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-primary">Buscar</button>
               </form>
 
               <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="col-lg-3 col-6">
                   <div class="stats-item text-center w-100 h-100">
-                    <span
-                      data-purecounter-start="0"
-                      data-purecounter-end="232"
-                      data-purecounter-duration="0"
-                      class="purecounter"
-                      >232</span
-                    >
-                    <p>Clients</p>
+                    <span>500+</span>
+                    <p>Ciudades</p>
                   </div>
                 </div>
-                <!-- End Stats Item -->
-
                 <div class="col-lg-3 col-6">
                   <div class="stats-item text-center w-100 h-100">
-                    <span
-                      data-purecounter-start="0"
-                      data-purecounter-end="521"
-                      data-purecounter-duration="0"
-                      class="purecounter"
-                      >521</span
-                    >
-                    <p>Projects</p>
+                    <span>10M+</span>
+                    <p>Datos Analizados</p>
                   </div>
                 </div>
-                <!-- End Stats Item -->
-
                 <div class="col-lg-3 col-6">
                   <div class="stats-item text-center w-100 h-100">
-                    <span
-                      data-purecounter-start="0"
-                      data-purecounter-end="1453"
-                      data-purecounter-duration="0"
-                      class="purecounter"
-                      >1453</span
-                    >
-                    <p>Support</p>
+                    <span>99%</span>
+                    <p>Precisión</p>
                   </div>
                 </div>
-                <!-- End Stats Item -->
-
                 <div class="col-lg-3 col-6">
                   <div class="stats-item text-center w-100 h-100">
-                    <span
-                      data-purecounter-start="0"
-                      data-purecounter-end="32"
-                      data-purecounter-duration="0"
-                      class="purecounter"
-                      >32</span
-                    >
-                    <p>Workers</p>
+                    <span>18</span>
+                    <p>Tipos de delitos</p>
                   </div>
                 </div>
-                <!-- End Stats Item -->
               </div>
             </div>
 
@@ -225,16 +211,17 @@
               data-aos-delay="100"
             >
               <div class="icon flex-shrink-0">
-                <i class="fa-solid fa-cart-flatbed"></i>
+                <i class="fa-solid fa-map-location-dot"></i>
               </div>
               <div>
-                <h4 class="title">Lorem Ipsum</h4>
+                <h4 class="title">Mapas de Seguridad</h4>
                 <p class="description">
-                  Voluptatum deleniti atque corrupti quos dolores et quas
-                  molestias excepturi sint occaecati cupiditate non provident
+                  Visualiza el nivel de seguridad de cada zona con nuestros
+                  mapas interactivos, basados en datos oficiales y análisis en
+                  tiempo real.
                 </p>
                 <a href="#" class="readmore stretched-link"
-                  ><span>Learn More</span><i class="bi bi-arrow-right"></i
+                  ><span>Saber más</span><i class="bi bi-arrow-right"></i
                 ></a>
               </div>
             </div>
@@ -246,16 +233,17 @@
               data-aos-delay="200"
             >
               <div class="icon flex-shrink-0">
-                <i class="fa-solid fa-truck"></i>
+                <i class="fa-solid fa-house-circle-check"></i>
               </div>
               <div>
-                <h4 class="title">Dolor Sitema</h4>
+                <h4 class="title">Sector Inmobiliario</h4>
                 <p class="description">
-                  Minim veniam, quis nostrud exercitation ullamco laboris nisi
-                  ut aliquip ex ea commodo consequat tarad limino ata
+                  Herramienta esencial para agentes inmobiliarios y compradores.
+                  Evalúa la seguridad de cualquier propiedad antes de comprar o
+                  alquilar.
                 </p>
                 <a href="#" class="readmore stretched-link"
-                  ><span>Learn More</span><i class="bi bi-arrow-right"></i
+                  ><span>Saber más</span><i class="bi bi-arrow-right"></i
                 ></a>
               </div>
             </div>
@@ -267,16 +255,16 @@
               data-aos-delay="300"
             >
               <div class="icon flex-shrink-0">
-                <i class="fa-solid fa-truck-ramp-box"></i>
+                <i class="fa-solid fa-plane-arrival"></i>
               </div>
               <div>
-                <h4 class="title">Sed ut perspiciatis</h4>
+                <h4 class="title">Guía para Viajeros</h4>
                 <p class="description">
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur
+                  Planifica tu viaje de forma segura. Conoce las zonas más
+                  seguras para alojarte y los lugares que debes evitar.
                 </p>
                 <a href="#" class="readmore stretched-link"
-                  ><span>Learn More</span><i class="bi bi-arrow-right"></i
+                  ><span>Saber más</span><i class="bi bi-arrow-right"></i
                 ></a>
               </div>
             </div>
@@ -297,7 +285,7 @@
             >
               <img src="assets/img/about.jpg" class="img-fluid" alt="" />
               <a
-                href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
+                href="assets/video/crimemapx-branding-es.mp4"
                 class="glightbox pulsating-play-btn"
               ></a>
             </div>
@@ -307,41 +295,44 @@
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <h3>About Us</h3>
+              <h3>Sobre Nosotros</h3>
               <p>
-                Dolor iure expedita id fuga asperiores qui sunt consequatur
-                minima. Quidem voluptas deleniti. Sit quia molestiae quia quas
-                qui magnam itaque veritatis dolores. Corrupti totam ut eius
-                incidunt reiciendis veritatis asperiores placeat.
+                Somos dos ingenieros de software apasionados por la tecnología y
+                comprometidos con mejorar la seguridad en España. Creamos
+                CrimeMapX con la visión de proporcionar información transparente
+                y objetiva sobre la seguridad en diferentes zonas del país.
               </p>
               <ul>
                 <li>
-                  <i class="bi bi-diagram-3"></i>
+                  <i class="bi bi-code-slash"></i>
                   <div>
-                    <h5>Ullamco laboris nisi ut aliquip consequat</h5>
+                    <h5>Tecnología al Servicio de la Seguridad</h5>
                     <p>
-                      Magni facilis facilis repellendus cum excepturi quaerat
-                      praesentium libre trade
+                      Utilizamos algoritmos avanzados y análisis de datos para
+                      transformar estadísticas complejas en información clara y
+                      útil para todos.
                     </p>
                   </div>
                 </li>
                 <li>
-                  <i class="bi bi-fullscreen-exit"></i>
+                  <i class="bi bi-graph-up"></i>
                   <div>
-                    <h5>Magnam soluta odio exercitationem reprehenderi</h5>
+                    <h5>Datos Objetivos y Transparentes</h5>
                     <p>
-                      Quo totam dolorum at pariatur aut distinctio dolorum
-                      laudantium illo direna pasata redi
+                      Nos basamos exclusivamente en datos oficiales y
+                      verificados, procesados mediante metodologías rigurosas
+                      para garantizar la máxima fiabilidad.
                     </p>
                   </div>
                 </li>
                 <li>
-                  <i class="bi bi-broadcast"></i>
+                  <i class="bi bi-people"></i>
                   <div>
-                    <h5>Voluptatem et qui exercitationem</h5>
+                    <h5>Compromiso Social</h5>
                     <p>
-                      Et velit et eos maiores est tempora et quos dolorem autem
-                      tempora incidunt maxime veniam
+                      Nuestra misión es ayudar a familias, viajeros y
+                      profesionales inmobiliarios a tomar decisiones informadas
+                      sobre seguridad.
                     </p>
                   </div>
                 </li>
@@ -353,19 +344,17 @@
       <!-- /About Section -->
 
       <!-- Services Section -->
-      <section id="services" class="services section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <span>Our Services<br /></span>
-          <h2>Our ServiceS</h2>
-          <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
-          </p>
-        </div>
-        <!-- End Section Title -->
+      <section id="service" class="services pt-0">
+        <div class="container" data-aos="fade-up">
+          <div class="section-header">
+            <h2>Nuestros Servicios</h2>
+            <p>
+              Desde información básica gratuita hasta soluciones empresariales
+              personalizadas, ofrecemos diferentes niveles de análisis de
+              seguridad para España.
+            </p>
+          </div>
 
-        <div class="container">
           <div class="row gy-4">
             <div
               class="col-lg-4 col-md-6"
@@ -375,20 +364,19 @@
               <div class="card">
                 <div class="card-img">
                   <img
-                    src="assets/img/service-1.jpg"
-                    alt=""
+                    src="assets/img/security-map.jpg"
+                    alt="Mapa de Seguridad"
                     class="img-fluid"
                   />
                 </div>
-                <h3>Storage</h3>
+                <h3>Mapa de Seguridad Público</h3>
                 <p>
-                  Cumque eos in qui numquam. Aut aspernatur perferendis sed
-                  atque quia voluptas quisquam repellendus temporibus
-                  itaqueofficiis odit
+                  Acceso gratuito a nuestro mapa interactivo con información
+                  básica sobre niveles de seguridad en España. Ideal para
+                  consultas rápidas y decisiones cotidianas.
                 </p>
               </div>
             </div>
-            <!-- End Card Item -->
 
             <div
               class="col-lg-4 col-md-6"
@@ -398,20 +386,20 @@
               <div class="card">
                 <div class="card-img">
                   <img
-                    src="assets/img/service-2.jpg"
-                    alt=""
+                    src="assets/img/real-estate-integration.jpg"
+                    alt="Integración Inmobiliaria"
                     class="img-fluid"
                   />
                 </div>
-                <h3><a href="#" class="stretched-link">Logistics</a></h3>
+                <h3>Soluciones Inmobiliarias</h3>
                 <p>
-                  Asperiores provident dolor accusamus pariatur dolore nam id
-                  audantium ut et iure incidunt molestiae dolor ipsam ducimus
-                  occaecati nisi
+                  API personalizada e widgets para portales inmobiliarios.
+                  Integre nuestros índices de seguridad directamente en sus
+                  listados de propiedades y mejore la experiencia de sus
+                  clientes.
                 </p>
               </div>
             </div>
-            <!-- End Card Item -->
 
             <div
               class="col-lg-4 col-md-6"
@@ -421,20 +409,19 @@
               <div class="card">
                 <div class="card-img">
                   <img
-                    src="assets/img/service-3.jpg"
-                    alt=""
+                    src="assets/img/custom-reports.jpg"
+                    alt="Informes Personalizados"
                     class="img-fluid"
                   />
                 </div>
-                <h3><a href="#" class="stretched-link">Cargo</a></h3>
+                <h3>Informes Profesionales</h3>
                 <p>
-                  Dicta quam similique quia architecto eos nisi aut ratione aut
-                  ipsum reiciendis sit doloremque oluptatem aut et molestiae ut
-                  et nihil
+                  Informes detallados y personalizados para empresas, incluyendo
+                  análisis históricos, tendencias y predicciones de seguridad
+                  por zonas.
                 </p>
               </div>
             </div>
-            <!-- End Card Item -->
 
             <div
               class="col-lg-4 col-md-6"
@@ -444,20 +431,19 @@
               <div class="card">
                 <div class="card-img">
                   <img
-                    src="assets/img/service-4.jpg"
-                    alt=""
+                    src="assets/img/security-partners.jpg"
+                    alt="Partnerships de Seguridad"
                     class="img-fluid"
                   />
                 </div>
-                <h3><a href="#" class="stretched-link">Trucking</a></h3>
+                <h3>Partnerships Estratégicos</h3>
                 <p>
-                  Dicta quam similique quia architecto eos nisi aut ratione aut
-                  ipsum reiciendis sit doloremque oluptatem aut et molestiae ut
-                  et nihil
+                  Colaboraciones con empresas de alarmas, aseguradoras y
+                  servicios anti-okupa. Datos precisos para optimizar servicios
+                  y evaluar riesgos.
                 </p>
               </div>
             </div>
-            <!-- End Card Item -->
 
             <div
               class="col-lg-4 col-md-6"
@@ -467,20 +453,19 @@
               <div class="card">
                 <div class="card-img">
                   <img
-                    src="assets/img/service-5.jpg"
-                    alt=""
+                    src="assets/img/custom-tools.jpg"
+                    alt="Herramientas Personalizadas"
                     class="img-fluid"
                   />
                 </div>
-                <h3>Packaging</h3>
+                <h3>Herramientas a Medida</h3>
                 <p>
-                  Illo consequuntur quisquam delectus praesentium modi
-                  dignissimos facere vel cum onsequuntur maiores beatae
-                  consequatur magni voluptates
+                  Desarrollo de soluciones personalizadas utilizando nuestra
+                  base de datos. Ideal para empresas de seguridad ciudadana y
+                  administraciones públicas.
                 </p>
               </div>
             </div>
-            <!-- End Card Item -->
 
             <div
               class="col-lg-4 col-md-6"
@@ -490,20 +475,19 @@
               <div class="card">
                 <div class="card-img">
                   <img
-                    src="assets/img/service-6.jpg"
-                    alt=""
+                    src="assets/img/data-analytics.jpg"
+                    alt="Análisis de Datos"
                     class="img-fluid"
                   />
                 </div>
-                <h3><a href="#" class="stretched-link">Warehousing</a></h3>
+                <h3>Análisis Avanzado</h3>
                 <p>
-                  Quas assumenda non occaecati molestiae. In aut earum sed natus
-                  eatae in vero. Ab modi quisquam aut nostrum unde et qui est
-                  non quo nulla
+                  Consultoría especializada en análisis de datos de seguridad.
+                  Identificación de patrones, evaluación de riesgos y
+                  recomendaciones estratégicas.
                 </p>
               </div>
             </div>
-            <!-- End Card Item -->
           </div>
         </div>
       </section>
@@ -524,14 +508,21 @@
           >
             <div class="col-xl-10">
               <div class="text-center">
-                <h3>Call To Action</h3>
+                <h3>Descubre el Nivel de Seguridad de tu Zona</h3>
                 <p>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                  occaecat cupidatat non proident, sunt in culpa qui officia
-                  deserunt mollit anim id est laborum.
+                  No dejes que la incertidumbre afecte tus decisiones. Ya sea
+                  que estés buscando un nuevo hogar, planificando un viaje o
+                  gestionando propiedades, nuestros datos precisos y
+                  actualizados te ayudarán a tomar decisiones informadas. Únete
+                  a los miles de usuarios que ya confían en CrimeMapX para
+                  evaluar la seguridad en España.
                 </p>
-                <a class="cta-btn" href="#">Call To Action</a>
+                <a
+                  class="cta-btn"
+                  href="https://app.crimemapx.com"
+                  target="_blank"
+                  >Acceder a la Plataforma</a
+                >
               </div>
             </div>
           </div>
@@ -540,468 +531,404 @@
       <!-- /Call To Action Section -->
 
       <!-- Features Section -->
-      <section id="features" class="features section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <span>Features</span>
-          <h2>Features</h2>
-          <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
-          </p>
-        </div>
-        <!-- End Section Title -->
+      <section id="features" class="features">
+        <div class="container" data-aos="fade-up">
+          <div class="section-header">
+            <h2>Características</h2>
+            <p>
+              Descubre cómo nuestro análisis avanzado de datos te ayuda a tomar
+              mejores decisiones
+            </p>
+          </div>
 
-        <div class="container">
-          <div class="row gy-4 align-items-center features-item">
-            <div
-              class="col-md-5 d-flex align-items-center"
-              data-aos="zoom-out"
-              data-aos-delay="100"
-            >
-              <img src="assets/img/features-1.jpg" class="img-fluid" alt="" />
+          <ul class="nav nav-tabs row gy-4 d-flex" role="tablist">
+            <li class="nav-item col-6 col-md-4 col-lg-2">
+              <a
+                class="nav-link active show"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-1"
+                role="tab"
+                aria-selected="true"
+              >
+                <i class="bi bi-graph-up-arrow color-cyan"></i>
+                <h4>Índice de Seguridad</h4>
+              </a>
+            </li>
+            <li class="nav-item col-6 col-md-4 col-lg-2">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-2"
+                role="tab"
+                aria-selected="false"
+              >
+                <i class="bi bi-layers color-indigo"></i>
+                <h4>Datos Multicapa</h4>
+              </a>
+            </li>
+            <li class="nav-item col-6 col-md-4 col-lg-2">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-3"
+                role="tab"
+                aria-selected="false"
+              >
+                <i class="bi bi-clock-history color-teal"></i>
+                <h4>Histórico</h4>
+              </a>
+            </li>
+            <li class="nav-item col-6 col-md-4 col-lg-2">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-4"
+                role="tab"
+                aria-selected="false"
+              >
+                <i class="bi bi-search color-blue"></i>
+                <h4>Búsqueda Avanzada</h4>
+              </a>
+            </li>
+            <li class="nav-item col-6 col-md-4 col-lg-2">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-5"
+                role="tab"
+                aria-selected="false"
+              >
+                <i class="bi bi-gear color-orange"></i>
+                <h4>Personalización</h4>
+              </a>
+            </li>
+            <li class="nav-item col-6 col-md-4 col-lg-2">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#tab-6"
+                role="tab"
+                aria-selected="false"
+              >
+                <i class="bi bi-shield-check color-green"></i>
+                <h4>Datos Verificados</h4>
+              </a>
+            </li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane active show" id="tab-1" role="tabpanel">
+              <div class="row gy-4">
+                <div
+                  class="col-lg-8 order-2 order-lg-1"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <h3>Índice de Seguridad Inteligente</h3>
+                  <p>
+                    Nuestro algoritmo propietario analiza múltiples variables
+                    para generar una puntuación de seguridad precisa y fácil de
+                    entender:
+                  </p>
+                  <ul>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Análisis de más de
+                      100 variables de seguridad
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Actualización
+                      periódica de datos oficiales
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Ponderación
+                      inteligente según la gravedad de incidentes
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Comparativa con
+                      zonas cercanas
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="col-lg-4 order-1 order-lg-2 text-center"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <img
+                    src="assets/img/features-1.svg"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
             </div>
-            <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
-              <h3>
-                Voluptatem dignissimos provident quasi corporis voluptates sit
-                assumenda.
-              </h3>
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <ul>
-                <li>
-                  <i class="bi bi-check"></i
-                  ><span>
-                    Ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check"></i>
-                  <span
-                    >Duis aute irure dolor in reprehenderit in voluptate
-                    velit.</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check"></i>
-                  <span>Ullam est qui quos consequatur eos accusamus.</span>
-                </li>
-              </ul>
+
+            <div class="tab-pane" id="tab-2" role="tabpanel">
+              <div class="row gy-4">
+                <div class="col-lg-8 order-2 order-lg-1">
+                  <h3>Análisis Multicapa</h3>
+                  <p>
+                    Visualiza diferentes capas de información para un análisis
+                    completo:
+                  </p>
+                  <ul>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Mapa de calor de
+                      incidencias
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Distribución por
+                      tipo de delito
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Evolución temporal
+                      de la seguridad
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Factores
+                      sociodemográficos
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 order-1 order-lg-2 text-center">
+                  <img
+                    src="assets/img/features-2.svg"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="tab-3" role="tabpanel">
+              <div class="row gy-4">
+                <div class="col-lg-8 order-2 order-lg-1">
+                  <h3>Datos Históricos</h3>
+                  <p>
+                    Analiza la evolución de la seguridad a lo largo del tiempo:
+                  </p>
+                  <ul>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Tendencias
+                      históricas por zona
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Patrones
+                      estacionales
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Comparativa
+                      interanual
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Predicciones
+                      basadas en tendencias
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 order-1 order-lg-2 text-center">
+                  <img
+                    src="assets/img/features-3.svg"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="tab-4" role="tabpanel">
+              <div class="row gy-4">
+                <div class="col-lg-8 order-2 order-lg-1">
+                  <h3>Búsqueda Inteligente</h3>
+                  <p>
+                    Encuentra exactamente lo que buscas con nuestras
+                    herramientas de búsqueda avanzada:
+                  </p>
+                  <ul>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Búsqueda por
+                      dirección o código postal
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Filtros por tipo
+                      de incidente
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Comparador de
+                      zonas
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Ranking de
+                      seguridad por barrios
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 order-1 order-lg-2 text-center">
+                  <img
+                    src="assets/img/features-4.svg"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="tab-5" role="tabpanel">
+              <div class="row gy-4">
+                <div class="col-lg-8 order-2 order-lg-1">
+                  <h3>Soluciones Personalizadas</h3>
+                  <p>
+                    Adapta nuestras herramientas a tus necesidades específicas:
+                  </p>
+                  <ul>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> API personalizable
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Widgets
+                      integrables
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Informes a medida
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Análisis sectorial
+                      específico
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 order-1 order-lg-2 text-center">
+                  <img
+                    src="assets/img/features-5.svg"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="tab-6" role="tabpanel">
+              <div class="row gy-4">
+                <div class="col-lg-8 order-2 order-lg-1">
+                  <h3>Datos Verificados</h3>
+                  <p>Confía en información precisa y verificada:</p>
+                  <ul>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Fuentes oficiales
+                      contrastadas
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Metodología
+                      transparente
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Actualizaciones
+                      periódicas
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill"></i> Control de calidad
+                      continuo
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 order-1 order-lg-2 text-center">
+                  <img
+                    src="assets/img/features-6.svg"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
             </div>
           </div>
-          <!-- Features Item -->
-
-          <div class="row gy-4 align-items-center features-item">
-            <div
-              class="col-md-5 order-1 order-md-2 d-flex align-items-center"
-              data-aos="zoom-out"
-              data-aos-delay="200"
-            >
-              <img src="assets/img/features-2.jpg" class="img-fluid" alt="" />
-            </div>
-            <div
-              class="col-md-7 order-2 order-md-1"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <h3>Corporis temporibus maiores provident</h3>
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                aute irure dolor in reprehenderit in voluptate velit esse cillum
-                dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum
-              </p>
-            </div>
-          </div>
-          <!-- Features Item -->
-
-          <div class="row gy-4 align-items-center features-item">
-            <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
-              <img src="assets/img/features-3.jpg" class="img-fluid" alt="" />
-            </div>
-            <div class="col-md-7" data-aos="fade-up">
-              <h3>
-                Sunt consequatur ad ut est nulla consectetur reiciendis animi
-                voluptas
-              </h3>
-              <p>
-                Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus
-                quia minima quod. Sunt saepe odit aut quia voluptatem hic
-                voluptas dolor doloremque.
-              </p>
-              <ul>
-                <li>
-                  <i class="bi bi-check"></i>
-                  <span
-                    >Ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check"></i
-                  ><span>
-                    Duis aute irure dolor in reprehenderit in voluptate
-                    velit.</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check"></i>
-                  <span
-                    >Facilis ut et voluptatem aperiam. Autem soluta ad
-                    fugiat</span
-                  >.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- Features Item -->
-
-          <div class="row gy-4 align-items-center features-item">
-            <div
-              class="col-md-5 order-1 order-md-2 d-flex align-items-center"
-              data-aos="zoom-out"
-            >
-              <img src="assets/img/features-4.jpg" class="img-fluid" alt="" />
-            </div>
-            <div class="col-md-7 order-2 order-md-1" data-aos="fade-up">
-              <h3>
-                Quas et necessitatibus eaque impedit ipsum animi consequatur
-                incidunt in
-              </h3>
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                aute irure dolor in reprehenderit in voluptate velit esse cillum
-                dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum
-              </p>
-            </div>
-          </div>
-          <!-- Features Item -->
         </div>
       </section>
       <!-- /Features Section -->
+      <!-- Divider -->
+      <div class="container">
+        <hr
+          class="section-divider"
+          data-aos="fade-up"
+          style="margin: 4rem auto; opacity: 0.1"
+        />
+      </div>
 
       <!-- Pricing Section -->
-      <section id="pricing" class="pricing section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <span>Pricing</span>
-          <h2>Pricing</h2>
-          <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
-          </p>
-        </div>
-        <!-- End Section Title -->
+      <section id="pricing" class="pricing pt-0">
+        <div class="container" data-aos="fade-up">
+          <div class="section-header">
+            <h2>Precios</h2>
+            <p>
+              Accede a datos de seguridad de España de forma gratuita o
+              contáctanos para soluciones empresariales personalizadas
+            </p>
+          </div>
 
-        <div class="container">
           <div class="row gy-4">
-            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-              <div class="pricing-item">
-                <h3>Free Plan</h3>
-                <h4><sup>$</sup>0<span> / month</span></h4>
-                <ul>
-                  <li>
-                    <i class="bi bi-check"></i>
-                    <span>Quam adipiscing vitae proin</span>
-                  </li>
-                  <li>
-                    <i class="bi bi-check"></i>
-                    <span>Nec feugiat nisl pretium</span>
-                  </li>
-                  <li>
-                    <i class="bi bi-check"></i>
-                    <span>Nulla at volutpat diam uteera</span>
-                  </li>
-                  <li class="na">
-                    <i class="bi bi-x"></i>
-                    <span>Pharetra massa massa ultricies</span>
-                  </li>
-                  <li class="na">
-                    <i class="bi bi-x"></i>
-                    <span>Massa ultricies mi quis hendrerit</span>
-                  </li>
-                </ul>
-                <a href="#" class="buy-btn">Buy Now</a>
-              </div>
-            </div>
-            <!-- End Pricing Item -->
-
-            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <div class="pricing-item featured">
-                <h3>Business Plan</h3>
-                <h4><sup>$</sup>29<span> / month</span></h4>
+                <h3>Acceso Gratuito</h3>
+                <h4><sup>€</sup>0<span></span></h4>
                 <ul>
                   <li>
-                    <i class="bi bi-check"></i>
-                    <span>Quam adipiscing vitae proin</span>
+                    <i class="bi bi-check"></i> Mapa interactivo de seguridad
                   </li>
                   <li>
-                    <i class="bi bi-check"></i>
-                    <span>Nec feugiat nisl pretium</span>
+                    <i class="bi bi-check"></i> Consulta de datos básicos por
+                    zona
                   </li>
                   <li>
-                    <i class="bi bi-check"></i>
-                    <span>Nulla at volutpat diam uteera</span>
+                    <i class="bi bi-check"></i> Estadísticas en formato tabla
                   </li>
-                  <li>
-                    <i class="bi bi-check"></i>
-                    <span>Pharetra massa massa ultricies</span>
-                  </li>
-                  <li>
-                    <i class="bi bi-check"></i>
-                    <span>Massa ultricies mi quis hendrerit</span>
-                  </li>
+                  <li><i class="bi bi-check"></i> Actualización trimestral</li>
+                  <li><i class="bi bi-check"></i> Acceso web completo</li>
                 </ul>
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a
+                  href="https://app.crimemapx.com"
+                  class="buy-btn"
+                  target="_blank"
+                  >Comenzar Ahora</a
+                >
               </div>
             </div>
-            <!-- End Pricing Item -->
 
-            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
               <div class="pricing-item">
-                <h3>Developer Plan</h3>
-                <h4><sup>$</sup>49<span> / month</span></h4>
+                <h3>Soluciones Empresariales</h3>
+                <h4>Personalizado</h4>
                 <ul>
+                  <li><i class="bi bi-check"></i> API dedicada</li>
                   <li>
-                    <i class="bi bi-check"></i>
-                    <span>Quam adipiscing vitae proin</span>
+                    <i class="bi bi-check"></i> Integración con tu plataforma
+                  </li>
+                  <li><i class="bi bi-check"></i> Informes detallados</li>
+                  <li>
+                    <i class="bi bi-check"></i> Datos históricos completos
                   </li>
                   <li>
-                    <i class="bi bi-check"></i>
-                    <span>Nec feugiat nisl pretium</span>
+                    <i class="bi bi-check"></i> Soporte técnico prioritario
                   </li>
-                  <li>
-                    <i class="bi bi-check"></i>
-                    <span>Nulla at volutpat diam uteera</span>
-                  </li>
-                  <li>
-                    <i class="bi bi-check"></i>
-                    <span>Pharetra massa massa ultricies</span>
-                  </li>
-                  <li>
-                    <i class="bi bi-check"></i>
-                    <span>Massa ultricies mi quis hendrerit</span>
-                  </li>
+                  <li><i class="bi bi-check"></i> Análisis personalizado</li>
                 </ul>
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="contact.html" class="buy-btn">Contactar</a>
               </div>
             </div>
-            <!-- End Pricing Item -->
           </div>
         </div>
       </section>
       <!-- /Pricing Section -->
 
-      <!-- Testimonials Section -->
-      <section id="testimonials" class="testimonials section dark-background">
-        <img
-          src="assets/img/testimonials-bg.jpg"
-          class="testimonials-bg"
-          alt=""
-        />
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": "auto",
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                }
-              }
-            </script>
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img
-                    src="assets/img/testimonials/testimonials-1.jpg"
-                    class="testimonial-img"
-                    alt=""
-                  />
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span
-                      >Proin iaculis purus consequat sem cure digni ssim donec
-                      porttitora entum suscipit rhoncus. Accusantium quam,
-                      ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                      risus at semper.</span
-                    >
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-              <!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img
-                    src="assets/img/testimonials/testimonials-2.jpg"
-                    class="testimonial-img"
-                    alt=""
-                  />
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span
-                      >Export tempor illum tamen malis malis eram quae irure
-                      esse labore quem cillum quid cillum eram malis quorum
-                      velit fore eram velit sunt aliqua noster fugiat irure amet
-                      legam anim culpa.</span
-                    >
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-              <!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img
-                    src="assets/img/testimonials/testimonials-3.jpg"
-                    class="testimonial-img"
-                    alt=""
-                  />
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span
-                      >Enim nisi quem export duis labore cillum quae magna enim
-                      sint quorum nulla quem veniam duis minim tempor labore
-                      quem eram duis noster aute amet eram fore quis sint
-                      minim.</span
-                    >
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-              <!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img
-                    src="assets/img/testimonials/testimonials-4.jpg"
-                    class="testimonial-img"
-                    alt=""
-                  />
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span
-                      >Fugiat enim eram quae cillum dolore dolor amet nulla
-                      culpa multos export minim fugiat minim velit minim dolor
-                      enim duis veniam ipsum anim magna sunt elit fore quem
-                      dolore labore illum veniam.</span
-                    >
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-              <!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img
-                    src="assets/img/testimonials/testimonials-5.jpg"
-                    class="testimonial-img"
-                    alt=""
-                  />
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span
-                      >Quis quorum aliqua sint quem legam fore sunt eram irure
-                      aliqua veniam tempor noster veniam enim culpa labore duis
-                      sunt culpa nulla illum cillum fugiat legam esse veniam
-                      culpa fore nisi cillum quid.</span
-                    >
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-              <!-- End testimonial item -->
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </section>
-      <!-- /Testimonials Section -->
-
       <!-- Faq Section -->
       <section id="faq" class="faq section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <span>Frequently Asked Questions</span>
-          <h2>Frequently Asked Questions</h2>
-          <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
-          </p>
-        </div>
-        <!-- End Section Title -->
+        <div class="container" data-aos="fade-up">
+          <div class="section-header">
+            <h2>Preguntas Frecuentes</h2>
+            <p>
+              Resolvemos tus dudas sobre CrimeMapX y nuestros servicios de
+              análisis de seguridad
+            </p>
+          </div>
 
-        <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-10">
               <div class="faq-container">
@@ -1011,95 +938,79 @@
                   data-aos-delay="200"
                 >
                   <i class="faq-icon bi bi-question-circle"></i>
-                  <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+                  <h3>¿De dónde proceden vuestros datos?</h3>
                   <div class="faq-content">
                     <p>
-                      Feugiat pretium nibh ipsum consequat. Tempus iaculis urna
-                      id volutpat lacus laoreet non curabitur gravida. Venenatis
-                      lectus magna fringilla urna porttitor rhoncus dolor purus
-                      non.
+                      Utilizamos datos oficiales del Ministerio del Interior y
+                      otras fuentes gubernamentales verificadas. Todos los datos
+                      son procesados y actualizados regularmente para garantizar
+                      su precisión y relevancia.
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
                 </div>
-                <!-- End Faq item-->
 
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                   <i class="faq-icon bi bi-question-circle"></i>
-                  <h3>
-                    Feugiat scelerisque varius morbi enim nunc faucibus a
-                    pellentesque?
-                  </h3>
+                  <h3>¿Con qué frecuencia se actualizan los datos?</h3>
                   <div class="faq-content">
                     <p>
-                      Dolor sit amet consectetur adipiscing elit pellentesque
-                      habitant morbi. Id interdum velit laoreet id donec
-                      ultrices. Fringilla phasellus faucibus scelerisque
-                      eleifend donec pretium. Est pellentesque elit ullamcorper
-                      dignissim. Mauris ultrices eros in cursus turpis massa
-                      tincidunt dui.
+                      Los datos básicos se actualizan trimestralmente,
+                      coincidiendo con las publicaciones oficiales. Los usuarios
+                      premium tienen acceso a actualizaciones más frecuentes y
+                      datos en tiempo real cuando están disponibles.
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
                 </div>
-                <!-- End Faq item-->
 
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
                   <i class="faq-icon bi bi-question-circle"></i>
-                  <h3>
-                    Dolor sit amet consectetur adipiscing elit pellentesque?
-                  </h3>
+                  <h3>¿Cómo calculáis el índice de seguridad?</h3>
                   <div class="faq-content">
                     <p>
-                      Eleifend mi in nulla posuere sollicitudin aliquam ultrices
-                      sagittis orci. Faucibus pulvinar elementum integer enim.
-                      Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
-                      tellus pellentesque eu tincidunt. Lectus urna duis
-                      convallis convallis tellus. Urna molestie at elementum eu
-                      facilisis sed odio morbi quis
+                      Nuestro índice de seguridad se calcula mediante un
+                      algoritmo que considera múltiples factores: tipos de
+                      delitos, frecuencia, gravedad, población del área y
+                      tendencias históricas. Cada factor tiene un peso
+                      específico en el cálculo final.
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
                 </div>
-                <!-- End Faq item-->
 
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
                   <i class="faq-icon bi bi-question-circle"></i>
                   <h3>
-                    Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
+                    ¿Puedo integrar vuestros datos en mi web inmobiliaria?
                   </h3>
                   <div class="faq-content">
                     <p>
-                      Dolor sit amet consectetur adipiscing elit pellentesque
-                      habitant morbi. Id interdum velit laoreet id donec
-                      ultrices. Fringilla phasellus faucibus scelerisque
-                      eleifend donec pretium. Est pellentesque elit ullamcorper
-                      dignissim. Mauris ultrices eros in cursus turpis massa
-                      tincidunt dui.
+                      Sí, ofrecemos una API y widgets personalizables para
+                      integrar nuestros datos en portales inmobiliarios.
+                      Contacta con nuestro equipo comercial para conocer las
+                      opciones disponibles y obtener una demo.
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
                 </div>
-                <!-- End Faq item-->
 
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
                   <i class="faq-icon bi bi-question-circle"></i>
                   <h3>
-                    Tempus quam pellentesque nec nam aliquam sem et tortor
-                    consequat?
+                    ¿Los datos son fiables para tomar decisiones inmobiliarias?
                   </h3>
                   <div class="faq-content">
                     <p>
-                      Molestie a iaculis at erat pellentesque adipiscing
-                      commodo. Dignissim suspendisse in est ante in. Nunc vel
-                      risus commodo viverra maecenas accumsan. Sit amet nisl
-                      suscipit adipiscing bibendum est. Purus gravida quis
-                      blandit turpis cursus in
+                      Sí, nuestros datos son utilizados por profesionales
+                      inmobiliarios en toda España. No obstante, recomendamos
+                      usar nuestra información como una herramienta más en el
+                      proceso de toma de decisiones, junto con otros factores
+                      relevantes.
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
                 </div>
-                <!-- End Faq item-->
               </div>
             </div>
           </div>
@@ -1116,16 +1027,17 @@
               <span class="sitename">CrimeMapX</span>
             </a>
             <p>
-              Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
-              nada terra videa magna derita valies darta donna mare fermentum
-              iaculis eu non diam phasellus.
+              CrimeMapX es una plataforma web que proporciona información sobre
+              la seguridad en diferentes zonas del país. Usando datos curados
+              por la propia plataforma, ofrecemos información actualizada y
+              precisa sobre la seguridad en España.
             </p>
-            <div class="social-links d-flex mt-4">
+            <!--<div class="social-links d-flex mt-4">
               <a href=""><i class="bi bi-twitter-x"></i></a>
               <a href=""><i class="bi bi-facebook"></i></a>
               <a href=""><i class="bi bi-instagram"></i></a>
               <a href=""><i class="bi bi-linkedin"></i></a>
-            </div>
+            </div>-->
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
@@ -1150,7 +1062,7 @@
             </ul>
           </div>
 
-          <div
+          <!--<div
             class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
           >
             <h4>Contact Us</h4>
@@ -1161,7 +1073,7 @@
               <strong>Phone:</strong> <span>+1 5589 55488 55</span>
             </p>
             <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
+          </div>-->
         </div>
       </div>
 
