@@ -108,6 +108,63 @@
         }
       }
     </style>
+    <style>
+      @font-face {
+        font-display: block;
+        font-family: Roboto;
+        src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2)
+            format("woff2"),
+          url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff)
+            format("woff");
+      }
+
+      @font-face {
+        font-display: fallback;
+        font-family: Roboto;
+        font-weight: 600;
+        src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2)
+            format("woff2"),
+          url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff)
+            format("woff");
+      }
+
+      @font-face {
+        font-display: fallback;
+        font-family: Roboto;
+        font-weight: 700;
+        src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2)
+            format("woff2"),
+          url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff)
+            format("woff");
+      }
+
+      #sib-container input:-ms-input-placeholder {
+        text-align: left;
+        font-family: Helvetica, sans-serif;
+        color: #c0ccda;
+      }
+
+      #sib-container input::placeholder {
+        text-align: left;
+        font-family: Helvetica, sans-serif;
+        color: #c0ccda;
+      }
+
+      #sib-container textarea::placeholder {
+        text-align: left;
+        font-family: Helvetica, sans-serif;
+        color: #c0ccda;
+      }
+
+      #sib-container a {
+        text-decoration: underline;
+        color: #2bb2fc;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://sibforms.com/forms/end-form/build/sib-styles.css"
+    />
   </head>
 
   <body class="index-page">
@@ -180,22 +237,82 @@
                 una puntuación de seguridad precisa, perfecta para decisiones
                 inmobiliarias y planificación de viajes.
               </p>
+              <div class="php-email-form" id="subscribe-form-container">
+                <form
+                  action="https://0c914840.sibforms.com/serve/MUIFALdasdNgiu0ekw0tud3YNnWxg4I1sZMeHevlZvw_47D1oT7aRNlFeHV-jltqJq_qKGQDifguy-EuRc4dZFf9voCQz5fN4cVem3rwOmR7wwkv8ySOmoBfIXum2-Oo0zOa2fXFYWY5zt4xLnqwInLdhXODkHtvOMcQbGA-GUihOtlZkhTmBuw4Lss3ytn_WCF9sIuQgyRiRw9s"
+                  method="POST"
+                  class="form-search d-flex align-items-stretch mb-3"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  id="subscribe-form"
+                >
+                  <input
+                    type="email"
+                    name="EMAIL"
+                    class="form-control"
+                    placeholder="Introduce tu email para recibir actualizaciones"
+                    required
+                  />
+                  <button type="submit" class="btn btn-primary">
+                    Suscribirse
+                  </button>
 
-              <form
-                action="#"
-                class="form-search d-flex align-items-stretch mb-3"
+                  <input
+                    type="text"
+                    name="email_address_check"
+                    value="true"
+                    class="input--hidden"
+                  />
+                  <input type="hidden" name="locale" value="es" />
+                  <div style="padding: 8px 0">
+                    <div
+                      class="g-recaptcha-v3"
+                      data-sitekey="6Lc0id4qAAAAAMDBT24u0Awp8xUXnHeBPGfN1Xit"
+                      style="display: none"
+                    ></div>
+                  </div>
+                </form>
+                <div class="entry__choice">
+                  <label>
+                    <input
+                      type="checkbox"
+                      class="input_replaced"
+                      value="1"
+                      id="OPT_IN"
+                      name="OPT_IN"
+                      style="width: 14px; height: 14px"
+                    />
+                    <span
+                      class="checkbox checkbox_tick_positive"
+                      style="margin-left: 0px"
+                    ></span
+                    ><span
+                      style="
+                        font-size: 14px;
+                        text-align: left;
+                        font-family: Helvetica, sans-serif;
+                        color: #c0ccda;
+                        background-color: transparent;
+                      "
+                      ><p>
+                        Acepto las condiciones y recibir sus newsletters.
+                      </p></span
+                    >
+                  </label>
+                </div>
+                <div class="loading">Cargando</div>
+                <div class="error-message"></div>
+                <div class="sent-message">
+                  ¡Su mensaje ha sido enviado. Gracias!
+                </div>
+              </div>
+
+              <div
+                class="row gy-4"
                 data-aos="fade-up"
-                data-aos-delay="200"
+                data-aos-delay="300"
+                style="margin-top: 0"
               >
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Introduce ciudad o código postal. Ej: Madrid"
-                />
-                <button type="submit" class="btn btn-primary">Buscar</button>
-              </form>
-
-              <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="col-lg-3 col-6">
                   <div class="stats-item text-center w-100 h-100">
                     <span>500+</span>
@@ -1129,6 +1246,95 @@
 
     <!-- Preloader -->
     <div id="preloader"></div>
+    <script>
+      const form = document.getElementById("subscribe-form");
+      const formContainer = document.getElementById("subscribe-form-container");
+
+      async function handleSubmit(event) {
+        event.preventDefault();
+        const loading = document.getElementById("loading");
+        const error = document.getElementById("error-message");
+        const sent = document.getElementById("sent-message");
+        const data = new FormData(event.target);
+        fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            Accept: "application/json",
+          },
+        })
+          .then((response) => {
+            if (response.ok) {
+              formContainer
+                .querySelector(".loading")
+                .classList.remove("d-block");
+              formContainer
+                .querySelector(".error-message")
+                .classList.remove("d-block");
+              formContainer
+                .querySelector(".sent-message")
+                .classList.add("d-block");
+              form.reset();
+            } else {
+              response.json().then((data) => {
+                formContainer
+                  .querySelector(".loading")
+                  .classList.remove("d-block");
+                formContainer
+                  .querySelector(".error-message")
+                  .classList.add("d-block");
+                formContainer
+                  .querySelector(".sent-message")
+                  .classList.remove("d-block");
+                if (Object.hasOwn(data, "errors")) {
+                  error.innerHTML = data["errors"]
+                    .map((error) => error["message"])
+                    .join(", ");
+                } else {
+                  error.innerHTML =
+                    "Vaya! Hubo un problema guardando tu email, prueba de nuevo mas tarde.";
+                }
+              });
+            }
+          })
+          .catch((error) => {
+            error.innerHTML =
+              "Vaya! Hubo un problema guardando tu email, prueba de nuevo mas tarde.";
+          });
+      }
+      form.addEventListener("submit", handleSubmit);
+    </script>
+    <script>
+      window.REQUIRED_CODE_ERROR_MESSAGE = "Elija un código de país";
+      window.LOCALE = "es";
+      window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE =
+        "La información que ha proporcionado no es válida. Compruebe el formato del campo e inténtelo de nuevo.";
+
+      window.REQUIRED_ERROR_MESSAGE = "Este campo no puede quedarse vacío. ";
+
+      window.GENERIC_INVALID_MESSAGE =
+        "La información que ha proporcionado no es válida. Compruebe el formato del campo e inténtelo de nuevo.";
+
+      window.translation = {
+        common: {
+          selectedList: "{quantity} lista seleccionada",
+          selectedLists: "{quantity} listas seleccionadas",
+        },
+      };
+
+      var AUTOHIDE = Boolean(1);
+    </script>
+
+    <script
+      defer
+      src="https://sibforms.com/forms/end-form/build/main.js"
+    ></script>
+
+    <script
+      src="https://www.google.com/recaptcha/api.js?render=6Lc0id4qAAAAAMDBT24u0Awp8xUXnHeBPGfN1Xit&hl=es"
+      async
+      defer
+    ></script>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
