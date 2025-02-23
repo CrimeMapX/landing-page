@@ -239,71 +239,75 @@
               </p>
               <div class="php-email-form" id="subscribe-form-container">
                 <form
-                  action="https://0c914840.sibforms.com/serve/MUIFALdasdNgiu0ekw0tud3YNnWxg4I1sZMeHevlZvw_47D1oT7aRNlFeHV-jltqJq_qKGQDifguy-EuRc4dZFf9voCQz5fN4cVem3rwOmR7wwkv8ySOmoBfIXum2-Oo0zOa2fXFYWY5zt4xLnqwInLdhXODkHtvOMcQbGA-GUihOtlZkhTmBuw4Lss3ytn_WCF9sIuQgyRiRw9s"
+                  action
+                  data-type="subscription"
                   method="POST"
-                  class="form-search d-flex align-items-stretch mb-3"
                   data-aos="fade-up"
                   data-aos-delay="200"
                   id="subscribe-form"
                 >
-                  <input
-                    type="email"
-                    name="EMAIL"
-                    class="form-control"
-                    placeholder="Introduce tu email para recibir actualizaciones"
-                    required
-                  />
-                  <button type="submit" class="btn btn-primary">
-                    Suscribirse
-                  </button>
+                  <div
+                    class="form-container form-search d-flex align-items-stretch mb-3"
+                  >
+                    <input
+                      type="email"
+                      name="EMAIL"
+                      class="form-control"
+                      placeholder="Introduce tu email para recibir actualizaciones"
+                      required
+                    />
+                    <button type="submit" class="btn btn-primary">
+                      Suscribirse
+                    </button>
 
-                  <input
-                    type="text"
-                    name="email_address_check"
-                    value="true"
-                    class="input--hidden"
-                  />
-                  <input type="hidden" name="locale" value="es" />
-                  <div style="padding: 8px 0">
-                    <div
-                      class="g-recaptcha-v3"
-                      data-sitekey="6Lc0id4qAAAAAMDBT24u0Awp8xUXnHeBPGfN1Xit"
-                      style="display: none"
-                    ></div>
+                    <input
+                      type="text"
+                      name="email_address_check"
+                      value=""
+                      class="input--hidden"
+                    />
+                    <input type="hidden" name="locale" value="es" />
+                    <div style="padding: 8px 0">
+                      <div
+                        class="g-recaptcha-v3"
+                        data-sitekey="6Lc4A-AqAAAAACtE925t9msdgPZ_mAuQuAnvaU2H"
+                        style="display: none"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="entry__choice">
+                    <label class="form-check-label">
+                      <input
+                        type="checkbox"
+                        class="input_replaced form-check-input"
+                        value="1"
+                        id="OPT_IN"
+                        name="OPT_IN"
+                        style="width: 14px; height: 14px"
+                      />
+                      <span
+                        class="checkbox checkbox_tick_positive"
+                        style="margin-left: 0px"
+                      ></span
+                      ><span
+                        style="
+                          font-size: 14px;
+                          text-align: left;
+                          font-family: Helvetica, sans-serif;
+                          color: #c0ccda;
+                          background-color: transparent;
+                        "
+                        ><p>
+                          Acepto las condiciones y recibir sus newsletters.
+                        </p></span
+                      >
+                    </label>
                   </div>
                 </form>
-                <div class="entry__choice">
-                  <label>
-                    <input
-                      type="checkbox"
-                      class="input_replaced"
-                      value="1"
-                      id="OPT_IN"
-                      name="OPT_IN"
-                      style="width: 14px; height: 14px"
-                    />
-                    <span
-                      class="checkbox checkbox_tick_positive"
-                      style="margin-left: 0px"
-                    ></span
-                    ><span
-                      style="
-                        font-size: 14px;
-                        text-align: left;
-                        font-family: Helvetica, sans-serif;
-                        color: #c0ccda;
-                        background-color: transparent;
-                      "
-                      ><p>
-                        Acepto las condiciones y recibir sus newsletters.
-                      </p></span
-                    >
-                  </label>
-                </div>
-                <div class="loading">Cargando</div>
-                <div class="error-message"></div>
-                <div class="sent-message">
-                  ¡Su mensaje ha sido enviado. Gracias!
+                <div class="loading">Cargando...</div>
+                <div class="error-message alert alert-danger"></div>
+                <div class="sent-message alert alert-success">
+                  Su mensaje ha sido enviado gracias!
                 </div>
               </div>
 
@@ -1246,84 +1250,6 @@
 
     <!-- Preloader -->
     <div id="preloader"></div>
-    <script>
-      const form = document.getElementById("subscribe-form");
-      const formContainer = document.getElementById("subscribe-form-container");
-
-      async function handleSubmit(event) {
-        event.preventDefault();
-        const loading = document.getElementById("loading");
-        const error = document.getElementById("error-message");
-        const sent = document.getElementById("sent-message");
-        const data = new FormData(event.target);
-        fetch(event.target.action, {
-          method: form.method,
-          body: data,
-          headers: {
-            Accept: "application/json",
-          },
-        })
-          .then((response) => {
-            if (response.ok) {
-              formContainer
-                .querySelector(".loading")
-                .classList.remove("d-block");
-              formContainer
-                .querySelector(".error-message")
-                .classList.remove("d-block");
-              formContainer
-                .querySelector(".sent-message")
-                .classList.add("d-block");
-              form.reset();
-            } else {
-              response.json().then((data) => {
-                formContainer
-                  .querySelector(".loading")
-                  .classList.remove("d-block");
-                formContainer
-                  .querySelector(".error-message")
-                  .classList.add("d-block");
-                formContainer
-                  .querySelector(".sent-message")
-                  .classList.remove("d-block");
-                if (Object.hasOwn(data, "errors")) {
-                  error.innerHTML = data["errors"]
-                    .map((error) => error["message"])
-                    .join(", ");
-                } else {
-                  error.innerHTML =
-                    "Vaya! Hubo un problema guardando tu email, prueba de nuevo mas tarde.";
-                }
-              });
-            }
-          })
-          .catch((error) => {
-            error.innerHTML =
-              "Vaya! Hubo un problema guardando tu email, prueba de nuevo mas tarde.";
-          });
-      }
-      form.addEventListener("submit", handleSubmit);
-    </script>
-    <script>
-      window.REQUIRED_CODE_ERROR_MESSAGE = "Elija un código de país";
-      window.LOCALE = "es";
-      window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE =
-        "La información que ha proporcionado no es válida. Compruebe el formato del campo e inténtelo de nuevo.";
-
-      window.REQUIRED_ERROR_MESSAGE = "Este campo no puede quedarse vacío. ";
-
-      window.GENERIC_INVALID_MESSAGE =
-        "La información que ha proporcionado no es válida. Compruebe el formato del campo e inténtelo de nuevo.";
-
-      window.translation = {
-        common: {
-          selectedList: "{quantity} lista seleccionada",
-          selectedLists: "{quantity} listas seleccionadas",
-        },
-      };
-
-      var AUTOHIDE = Boolean(1);
-    </script>
 
     <script
       defer
@@ -1331,14 +1257,13 @@
     ></script>
 
     <script
-      src="https://www.google.com/recaptcha/api.js?render=6Lc0id4qAAAAAMDBT24u0Awp8xUXnHeBPGfN1Xit&hl=es"
+      src="https://www.google.com/recaptcha/api.js?render=6Lc4A-AqAAAAACtE925t9msdgPZ_mAuQuAnvaU2H&hl=es"
       async
       defer
     ></script>
-
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -1346,5 +1271,6 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/newsletter.js"></script>
   </body>
 </html>
