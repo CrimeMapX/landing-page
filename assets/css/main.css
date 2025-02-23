@@ -286,7 +286,7 @@ h6 {
   }
 
   .header .navmenu {
-    order: 3;
+    order: 4;
   }
 }
 
@@ -2050,4 +2050,81 @@ section,
 .extra-cta-section button h3 {
   color: white;
   padding: 13px 13px 8px;
+}
+
+.logo-img {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+/*
+* I18n section
+*/
+
+.language-selector {
+  order: 3;
+  color: white;
+}
+
+.language-selector a {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 3px;
+  text-decoration: none;
+}
+
+.language-selector a:hover span,
+.language-selector a.active span {
+  text-decoration: underline;
+}
+
+@media (min-width: 1280px) {
+  .language-selector {
+    margin-left: 25px;
+  }
+}
+
+@media (max-width: 468px) {
+  .language-selector a span {
+    display: none;
+  }
+}
+
+.services .card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.services .card:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+html {
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 80px; /* Adjust this value to match your header height */
+}
+[role="tablist"] li.nav-item {
+  cursor: pointer;
+}
+.tab-pane {
+  padding: 1rem 0;
+}
+#features {
+  padding-bottom: 0;
+}
+.header .logo h1.sitename {
+  @media (max-width: 520px) {
+    font-size: 20px;
+  }
+}
+.header .btn-getstarted {
+  @media (max-width: 468px) {
+    margin-left: 0;
+    margin-right: 10px;
+    font-size: 12px;
+  }
 }

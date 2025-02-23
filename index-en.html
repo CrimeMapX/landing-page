@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Inicio - CrimeMapX</title>
+    <title>Home - CrimeMapX</title>
     <meta
       name="description"
-      content="Análisis de seguridad en España basado en datos reales de criminalidad. Ideal para inmobiliarias y viajeros."
+      content="Security analysis in Spain based on real crime data. Ideal for real estate and travelers."
     />
     <meta
       name="keywords"
-      content="seguridad españa, índice criminalidad, mapa delincuencia, seguridad barrios, vivienda segura, turismo seguro"
+      content="spain security, crime index, crime map, neighborhood safety, safe housing, safe tourism"
     />
 
     <!-- Favicons -->
@@ -129,43 +129,40 @@
       <div
         class="container-fluid container-xl position-relative d-flex align-items-center"
       >
-        <a href="index.html" class="logo d-flex align-items-center me-auto">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
+        <a href="index-en.html" class="logo d-flex align-items-center me-auto">
           <img src="assets/img/logo.png" alt="" class="logo-img" />
           <h1 class="sitename">CrimeMapX</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li>
-              <a href="index.html" class="active">Inicio</a>
-            </li>
-            <li><a href="#features">Características</a></li>
+            <li><a href="index-en.html" class="active">Home</a></li>
+            <li><a href="#features">Features</a></li>
             <li class="dropdown">
               <a href="#service"
-                ><span>Servicios</span
+                ><span>Services</span
                 ><i class="bi bi-chevron-down toggle-dropdown"></i
               ></a>
               <ul>
-                <li><a href="#featured-services">Servicios Destacados</a></li>
-                <li><a href="#service">Todos los Servicios</a></li>
-                <li><a href="#pricing">Precios</a></li>
+                <li><a href="#featured-services">Featured Services</a></li>
+                <li><a href="#service">All Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
               </ul>
             </li>
-            <li><a href="#about">Sobre Nosotros</a></li>
+            <li><a href="#about">About Us</a></li>
             <li><a href="#faq">FAQ</a></li>
-            <li><a href="contact.html">Contacto</a></li>
+            <li><a href="contact-en.html">Contact</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
         <!-- Add language selector -->
         <div class="language-selector d-flex align-items-center me-3">
-          <a href="index.html" class="active" title="Español"
-            >🇪🇸 <span>ES</span></a
-          >
+          <a href="index.html" title="Spanish">🇪🇸 <span>ES</span></a>
           <span class="mx-1">|</span>
-          <a href="index-en.html" title="English">🇬🇧 <span>EN</span></a>
+          <a href="index-en.html" class="active" title="English"
+            >🇬🇧 <span>EN</span></a
+          >
         </div>
 
         <a
@@ -173,7 +170,7 @@
           href="https://app.crimemapx.com"
           target="_blank"
         >
-          ACCESO APP
+          ACCESS APP
         </a>
       </div>
     </header>
@@ -194,14 +191,12 @@
               class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
             >
               <h2 data-aos="fade-up">
-                Datos de Seguridad Inteligentes para Empresas y Particulares en
-                España
+                Smart Security Data for Businesses and Individuals in Spain
               </h2>
               <p data-aos="fade-up" data-aos-delay="100">
-                Descubre el nivel de seguridad de cualquier zona en España con
-                datos reales y actualizados. Nuestro algoritmo único proporciona
-                una puntuación de seguridad precisa, perfecta para decisiones
-                inmobiliarias y planificación de viajes.
+                Discover the security level of any area in Spain with real and
+                updated data. Our unique algorithm provides an accurate security
+                score, perfect for real estate decisions and travel planning.
               </p>
               <div class="php-email-form" id="subscribe-form-container">
                 <form
@@ -219,11 +214,11 @@
                       type="email"
                       name="EMAIL"
                       class="form-control"
-                      placeholder="Introduce tu email para recibir actualizaciones"
+                      placeholder="Enter your email to receive updates"
                       required
                     />
                     <button type="submit" class="btn btn-primary">
-                      Suscribirse
+                      Subscribe
                     </button>
 
                     <input
@@ -232,7 +227,7 @@
                       value=""
                       class="input--hidden"
                     />
-                    <input type="hidden" name="locale" value="es" />
+                    <input type="hidden" name="locale" value="en" />
                     <div style="padding: 8px 0">
                       <div
                         class="g-recaptcha-v3"
@@ -254,8 +249,8 @@
                       <span
                         class="checkbox checkbox_tick_positive"
                         style="margin-left: 0px"
-                      ></span
-                      ><span
+                      ></span>
+                      <span
                         style="
                           font-size: 14px;
                           text-align: left;
@@ -263,17 +258,19 @@
                           color: #c0ccda;
                           background-color: transparent;
                         "
-                        ><p>
-                          Acepto las condiciones y recibir sus newsletters.
-                        </p></span
                       >
+                        <p>
+                          I accept the terms and conditions and agree to receive
+                          newsletters.
+                        </p>
+                      </span>
                     </label>
                   </div>
                 </form>
-                <div class="loading">Cargando...</div>
+                <div class="loading">Loading...</div>
                 <div class="error-message alert alert-danger"></div>
                 <div class="sent-message alert alert-success">
-                  Su mensaje ha sido enviado gracias!
+                  Your message has been sent. Thank you!
                 </div>
               </div>
 
@@ -286,25 +283,25 @@
                 <div class="col-lg-3 col-6">
                   <div class="stats-item text-center w-100 h-100">
                     <span>500+</span>
-                    <p>Ciudades</p>
+                    <p>Cities</p>
                   </div>
                 </div>
                 <div class="col-lg-3 col-6">
                   <div class="stats-item text-center w-100 h-100">
                     <span>100k+</span>
-                    <p>Registros</p>
+                    <p>Records</p>
                   </div>
                 </div>
                 <div class="col-lg-3 col-6">
                   <div class="stats-item text-center w-100 h-100">
                     <span>5+</span>
-                    <p>Años de datos</p>
+                    <p>Years of Data</p>
                   </div>
                 </div>
                 <div class="col-lg-3 col-6">
                   <div class="stats-item text-center w-100 h-100">
                     <span>18</span>
-                    <p>Tipos de delitos</p>
+                    <p>Crime Types</p>
                   </div>
                 </div>
               </div>
@@ -323,16 +320,17 @@
           </div>
         </div>
       </section>
-      <!-- /Hero Section -->
+
       <section class="extra-cta-section">
         <div class="container">
           <button class="btn btn-primary">
             <a href="https://app.crimemapx.com" target="_blank">
-              <h3>CONOCER MÁS SOBRE LA CRIMINALIDAD EN ESPAÑA</h3>
+              <h3>LEARN MORE ABOUT CRIME IN SPAIN</h3>
             </a>
           </button>
         </div>
       </section>
+
       <!-- Featured Services Section -->
       <section id="featured-services" class="featured-services section">
         <div class="container">
@@ -346,15 +344,13 @@
                 <i class="fa-solid fa-map-location-dot"></i>
               </div>
               <div>
-                <h4 class="title">Mapas de Seguridad</h4>
+                <h4 class="title">Security Maps</h4>
                 <p class="description">
-                  Visualiza el nivel de seguridad de cada zona con nuestros
-                  mapas interactivos, basados en datos oficiales y análisis en
-                  tiempo real.
+                  Visualize the security level of each area with our interactive
+                  maps, based on official data and real-time analysis.
                 </p>
               </div>
             </div>
-            <!-- End Service Item -->
 
             <div
               class="col-lg-4 col-md-6 service-item d-flex"
@@ -365,15 +361,13 @@
                 <i class="fa-solid fa-house-circle-check"></i>
               </div>
               <div>
-                <h4 class="title">Sector Inmobiliario</h4>
+                <h4 class="title">Real Estate Sector</h4>
                 <p class="description">
-                  Herramienta esencial para agentes inmobiliarios y compradores.
-                  Evalúa la seguridad de cualquier propiedad antes de comprar o
-                  alquilar.
+                  Essential tool for real estate agents and buyers. Evaluate the
+                  security of any property before buying or renting.
                 </p>
               </div>
             </div>
-            <!-- End Service Item -->
 
             <div
               class="col-lg-4 col-md-6 service-item d-flex"
@@ -384,106 +378,74 @@
                 <i class="fa-solid fa-plane-arrival"></i>
               </div>
               <div>
-                <h4 class="title">Guía para Viajeros</h4>
+                <h4 class="title">Traveler's Guide</h4>
                 <p class="description">
-                  Planifica tu viaje de forma segura. Conoce las zonas más
-                  seguras para alojarte y los lugares que debes evitar.
+                  Plan your trip safely. Know the safest areas to stay and
+                  places to avoid.
                 </p>
               </div>
             </div>
-            <!-- End Service Item -->
           </div>
         </div>
       </section>
-      <!-- /Featured Services Section -->
 
       <!-- About Section -->
       <section id="about" class="about section">
-        <div class="container">
-          <div class="row gy-4">
-            <div
-              class="col-lg-6 position-relative align-self-start order-lg-last order-first"
-              data-aos="fade-up"
-              data-aos-delay="200"
-              id="video-about"
-            >
+        <div class="container" data-aos="fade-up">
+          <div class="section-header">
+            <h2>About Us</h2>
+            <p>
+              Learn more about how we help make informed decisions about
+              security in Spain
+            </p>
+          </div>
+
+          <div class="row g-4 g-lg-5">
+            <div class="col-lg-5">
               <div class="about-img">
-                <span class="play-btn">
-                  <h5>
-                    <i class="fa-solid fa-play"></i>
-                    Video explicativo sobre la App de CrimeMapX
-                  </h5>
-                </span>
+                <img
+                  src="assets/img/about.jpg"
+                  class="img-fluid"
+                  alt="About CrimeMapX"
+                />
               </div>
-              <img src="assets/img/about.jpg" class="img-fluid" alt="" />
-              <a
-                href="assets/video/crimemapx-branding-es.mp4"
-                class="glightbox pulsating-play-btn"
-              ></a>
             </div>
 
-            <div
-              class="col-lg-6 content order-last order-lg-first"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <h3>Sobre Nosotros</h3>
-              <p>
-                Somos dos ingenieros de software apasionados por la tecnología y
-                comprometidos con mejorar la seguridad en España. Creamos
-                CrimeMapX con la visión de proporcionar información transparente
-                y objetiva sobre la seguridad en diferentes zonas del país.
-              </p>
-              <ul>
+            <div class="col-lg-7">
+              <h3 class="pt-0 pt-lg-5">
+                Dedicated to providing accurate security information for Spain
+              </h3>
+              <ul class="about-list">
                 <li>
-                  <i class="bi bi-code-slash"></i>
-                  <div>
-                    <h5>Tecnología al Servicio de la Seguridad</h5>
-                    <p>
-                      Utilizamos algoritmos avanzados y análisis de datos para
-                      transformar estadísticas complejas en información clara y
-                      útil para todos.
-                    </p>
-                  </div>
+                  <i class="bi bi-check-circle-fill"></i> Real-time data
+                  analysis from official sources
                 </li>
                 <li>
-                  <i class="bi bi-graph-up"></i>
-                  <div>
-                    <h5>Datos Objetivos y Transparentes</h5>
-                    <p>
-                      Nos basamos exclusivamente en datos oficiales y
-                      verificados, procesados mediante metodologías rigurosas
-                      para garantizar la máxima fiabilidad.
-                    </p>
-                  </div>
+                  <i class="bi bi-check-circle-fill"></i> Advanced security
+                  scoring algorithm
                 </li>
                 <li>
-                  <i class="bi bi-people"></i>
-                  <div>
-                    <h5>Compromiso Social</h5>
-                    <p>
-                      Nuestra misión es ayudar a familias, viajeros y
-                      profesionales inmobiliarios a tomar decisiones informadas
-                      sobre seguridad.
-                    </p>
-                  </div>
+                  <i class="bi bi-check-circle-fill"></i> Comprehensive coverage
+                  of Spanish territory
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i> Regular updates and
+                  trend analysis
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </section>
-      <!-- /About Section -->
 
       <!-- Services Section -->
       <section id="service" class="services pt-0">
         <div class="container" data-aos="fade-up">
           <div class="section-header">
-            <h2>Nuestros Servicios</h2>
+            <h2>Our Services</h2>
             <p>
-              Desde información básica gratuita hasta soluciones empresariales
-              personalizadas, ofrecemos diferentes niveles de análisis de
-              seguridad para España.
+              From free basic information to customized business solutions, we
+              offer different levels of security analysis for Spain.
             </p>
           </div>
 
@@ -497,15 +459,15 @@
                 <div class="card-img">
                   <img
                     src="assets/img/security-map.jpg"
-                    alt="Mapa de Seguridad"
+                    alt="Security Map"
                     class="img-fluid"
                   />
                 </div>
-                <h3>Mapa de Seguridad Público</h3>
+                <h3>Public Security Map</h3>
                 <p>
-                  Acceso gratuito a nuestro mapa interactivo con información
-                  básica sobre niveles de seguridad en España. Ideal para
-                  consultas rápidas y decisiones cotidianas.
+                  Free access to our interactive map with basic information
+                  about security levels in Spain. Perfect for quick
+                  consultations and daily decisions.
                 </p>
               </div>
             </div>
@@ -519,16 +481,15 @@
                 <div class="card-img">
                   <img
                     src="assets/img/real-estate-integration.jpg"
-                    alt="Integración Inmobiliaria"
+                    alt="Real Estate Integration"
                     class="img-fluid"
                   />
                 </div>
-                <h3>Soluciones Inmobiliarias</h3>
+                <h3>Real Estate Solutions</h3>
                 <p>
-                  API personalizada e widgets para portales inmobiliarios.
-                  Integre nuestros índices de seguridad directamente en sus
-                  listados de propiedades y mejore la experiencia de sus
-                  clientes.
+                  Custom API and widgets for real estate portals. Integrate our
+                  security indices directly into your property listings and
+                  enhance your clients' experience.
                 </p>
               </div>
             </div>
@@ -542,15 +503,14 @@
                 <div class="card-img">
                   <img
                     src="assets/img/custom-reports.jpg"
-                    alt="Informes Personalizados"
+                    alt="Custom Reports"
                     class="img-fluid"
                   />
                 </div>
-                <h3>Informes Profesionales</h3>
+                <h3>Professional Reports</h3>
                 <p>
-                  Informes detallados y personalizados para empresas, incluyendo
-                  análisis históricos, tendencias y predicciones de seguridad
-                  por zonas.
+                  Detailed and customized reports for businesses, including
+                  historical analysis, trends, and security predictions by area.
                 </p>
               </div>
             </div>
@@ -564,15 +524,15 @@
                 <div class="card-img">
                   <img
                     src="assets/img/security-partners.jpg"
-                    alt="Partnerships de Seguridad"
+                    alt="Security Partnerships"
                     class="img-fluid"
                   />
                 </div>
-                <h3>Partnerships Estratégicos</h3>
+                <h3>Strategic Partnerships</h3>
                 <p>
-                  Colaboraciones con empresas de alarmas, aseguradoras y
-                  servicios anti-okupa. Datos precisos para optimizar servicios
-                  y evaluar riesgos.
+                  Collaborations with alarm companies, insurance providers, and
+                  anti-squatting services. Precise data to optimize services and
+                  evaluate risks.
                 </p>
               </div>
             </div>
@@ -586,15 +546,14 @@
                 <div class="card-img">
                   <img
                     src="assets/img/custom-tools.jpg"
-                    alt="Herramientas Personalizadas"
+                    alt="Custom Tools"
                     class="img-fluid"
                   />
                 </div>
-                <h3>Herramientas a Medida</h3>
+                <h3>Custom Tools</h3>
                 <p>
-                  Desarrollo de soluciones personalizadas utilizando nuestra
-                  base de datos. Ideal para empresas de seguridad ciudadana y
-                  administraciones públicas.
+                  Development of customized solutions using our database. Ideal
+                  for public safety companies and public administrations.
                 </p>
               </div>
             </div>
@@ -608,15 +567,15 @@
                 <div class="card-img">
                   <img
                     src="assets/img/data-analytics.jpg"
-                    alt="Análisis de Datos"
+                    alt="Data Analytics"
                     class="img-fluid"
                   />
                 </div>
-                <h3>Análisis Avanzado</h3>
+                <h3>Advanced Analysis</h3>
                 <p>
-                  Consultoría especializada en análisis de datos de seguridad.
-                  Identificación de patrones, evaluación de riesgos y
-                  recomendaciones estratégicas.
+                  Specialized consulting in security data analysis. Pattern
+                  identification, risk assessment, and strategic
+                  recommendations.
                 </p>
               </div>
             </div>
@@ -640,20 +599,19 @@
           >
             <div class="col-xl-10">
               <div class="text-center">
-                <h3>Descubre el Nivel de Seguridad de tu Zona</h3>
+                <h3>Discover the Security Level in Your Area</h3>
                 <p>
-                  No dejes que la incertidumbre afecte tus decisiones. Ya sea
-                  que estés buscando un nuevo hogar, planificando un viaje o
-                  gestionando propiedades, nuestros datos precisos y
-                  actualizados te ayudarán a tomar decisiones informadas. Únete
-                  a los miles de usuarios que ya confían en CrimeMapX para
-                  evaluar la seguridad en España.
+                  Don't let uncertainty affect your decisions. Whether you're
+                  looking for a new home, planning a trip, or managing
+                  properties, our accurate and updated data will help you make
+                  informed decisions. Join thousands of users who already trust
+                  CrimeMapX to evaluate security in Spain.
                 </p>
                 <a
                   class="cta-btn"
                   href="https://app.crimemapx.com"
                   target="_blank"
-                  >Acceder a la Plataforma</a
+                  >Access Platform</a
                 >
               </div>
             </div>
@@ -666,10 +624,10 @@
       <section id="features" class="features">
         <div class="container" data-aos="fade-up">
           <div class="section-header">
-            <h2>Características</h2>
+            <h2>Features</h2>
             <p>
-              Descubre cómo nuestro análisis avanzado de datos te ayuda a tomar
-              mejores decisiones
+              Discover how our advanced data analysis helps you make better
+              decisions
             </p>
           </div>
 
@@ -683,7 +641,7 @@
                 aria-selected="true"
               >
                 <i class="bi bi-graph-up-arrow color-cyan"></i>
-                <h4>Índice de Seguridad</h4>
+                <h4>Security Index</h4>
               </a>
             </li>
             <li class="nav-item col-6 col-md-4 col-lg-2">
@@ -695,7 +653,7 @@
                 aria-selected="false"
               >
                 <i class="bi bi-layers color-indigo"></i>
-                <h4>Datos Multicapa</h4>
+                <h4>Multilayer Data</h4>
               </a>
             </li>
             <li class="nav-item col-6 col-md-4 col-lg-2">
@@ -707,7 +665,7 @@
                 aria-selected="false"
               >
                 <i class="bi bi-clock-history color-teal"></i>
-                <h4>Histórico</h4>
+                <h4>Historical</h4>
               </a>
             </li>
             <li class="nav-item col-6 col-md-4 col-lg-2">
@@ -719,7 +677,7 @@
                 aria-selected="false"
               >
                 <i class="bi bi-search color-blue"></i>
-                <h4>Búsqueda Avanzada</h4>
+                <h4>Advanced Search</h4>
               </a>
             </li>
             <li class="nav-item col-6 col-md-4 col-lg-2">
@@ -731,7 +689,7 @@
                 aria-selected="false"
               >
                 <i class="bi bi-gear color-orange"></i>
-                <h4>Personalización</h4>
+                <h4>Customization</h4>
               </a>
             </li>
             <li class="nav-item col-6 col-md-4 col-lg-2">
@@ -743,7 +701,7 @@
                 aria-selected="false"
               >
                 <i class="bi bi-shield-check color-green"></i>
-                <h4>Datos Verificados</h4>
+                <h4>Verified Data</h4>
               </a>
             </li>
           </ul>
@@ -756,28 +714,27 @@
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  <h3>Índice de Seguridad Inteligente</h3>
+                  <h3>Intelligent Security Index</h3>
                   <p>
-                    Nuestro algoritmo propietario analiza múltiples variables
-                    para generar una puntuación de seguridad precisa y fácil de
-                    entender:
+                    Our proprietary algorithm analyzes multiple variables to
+                    generate an accurate and easy-to-understand security score:
                   </p>
                   <ul>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Análisis de más de
-                      100 variables de seguridad
+                      <i class="bi bi-check-circle-fill"></i> Analysis of over
+                      100 security variables
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Actualización
-                      periódica de datos oficiales
+                      <i class="bi bi-check-circle-fill"></i> Regular updates of
+                      official data
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Ponderación
-                      inteligente según la gravedad de incidentes
+                      <i class="bi bi-check-circle-fill"></i> Intelligent
+                      weighting based on incident severity
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Comparativa con
-                      zonas cercanas
+                      <i class="bi bi-check-circle-fill"></i> Comparison with
+                      nearby areas
                     </li>
                   </ul>
                 </div>
@@ -798,27 +755,26 @@
             <div class="tab-pane" id="tab-2" role="tabpanel">
               <div class="row gy-4">
                 <div class="col-lg-8 order-2 order-lg-1">
-                  <h3>Análisis Multicapa</h3>
+                  <h3>Multilayer Analysis</h3>
                   <p>
-                    Visualiza diferentes capas de información para un análisis
-                    completo:
+                    Visualize different layers of information for comprehensive
+                    analysis:
                   </p>
                   <ul>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Mapa de calor de
-                      incidencias
+                      <i class="bi bi-check-circle-fill"></i> Incident heat map
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Distribución por
-                      tipo de delito
+                      <i class="bi bi-check-circle-fill"></i> Distribution by
+                      crime type
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Evolución temporal
-                      de la seguridad
+                      <i class="bi bi-check-circle-fill"></i> Security evolution
+                      over time
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Factores
-                      sociodemográficos
+                      <i class="bi bi-check-circle-fill"></i> Sociodemographic
+                      factors
                     </li>
                   </ul>
                 </div>
@@ -835,26 +791,23 @@
             <div class="tab-pane" id="tab-3" role="tabpanel">
               <div class="row gy-4">
                 <div class="col-lg-8 order-2 order-lg-1">
-                  <h3>Datos Históricos</h3>
-                  <p>
-                    Analiza la evolución de la seguridad a lo largo del tiempo:
-                  </p>
+                  <h3>Historical Data</h3>
+                  <p>Analyze security evolution over time:</p>
                   <ul>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Tendencias
-                      históricas por zona
+                      <i class="bi bi-check-circle-fill"></i> Historical trends
+                      by area
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Patrones
-                      estacionales
+                      <i class="bi bi-check-circle-fill"></i> Seasonal patterns
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Comparativa
-                      interanual
+                      <i class="bi bi-check-circle-fill"></i> Year-over-year
+                      comparison
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Predicciones
-                      basadas en tendencias
+                      <i class="bi bi-check-circle-fill"></i> Trend-based
+                      predictions
                     </li>
                   </ul>
                 </div>
@@ -871,27 +824,26 @@
             <div class="tab-pane" id="tab-4" role="tabpanel">
               <div class="row gy-4">
                 <div class="col-lg-8 order-2 order-lg-1">
-                  <h3>Búsqueda Inteligente</h3>
+                  <h3>Intelligent Search</h3>
                   <p>
-                    Encuentra exactamente lo que buscas con nuestras
-                    herramientas de búsqueda avanzada:
+                    Find exactly what you're looking for with our advanced
+                    search tools:
                   </p>
                   <ul>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Búsqueda por
-                      dirección o código postal
+                      <i class="bi bi-check-circle-fill"></i> Search by address
+                      or postal code
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Filtros por tipo
-                      de incidente
+                      <i class="bi bi-check-circle-fill"></i> Filters by
+                      incident type
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Comparador de
-                      zonas
+                      <i class="bi bi-check-circle-fill"></i> Area comparator
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Ranking de
-                      seguridad por barrios
+                      <i class="bi bi-check-circle-fill"></i> Neighborhood
+                      security ranking
                     </li>
                   </ul>
                 </div>
@@ -908,24 +860,21 @@
             <div class="tab-pane" id="tab-5" role="tabpanel">
               <div class="row gy-4">
                 <div class="col-lg-8 order-2 order-lg-1">
-                  <h3>Soluciones Personalizadas</h3>
-                  <p>
-                    Adapta nuestras herramientas a tus necesidades específicas:
-                  </p>
+                  <h3>Custom Solutions</h3>
+                  <p>Adapt our tools to your specific needs:</p>
                   <ul>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> API personalizable
+                      <i class="bi bi-check-circle-fill"></i> Customizable API
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Widgets
-                      integrables
+                      <i class="bi bi-check-circle-fill"></i> Integrable widgets
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Informes a medida
+                      <i class="bi bi-check-circle-fill"></i> Custom reports
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Análisis sectorial
-                      específico
+                      <i class="bi bi-check-circle-fill"></i> Sector-specific
+                      analysis
                     </li>
                   </ul>
                 </div>
@@ -942,24 +891,23 @@
             <div class="tab-pane" id="tab-6" role="tabpanel">
               <div class="row gy-4">
                 <div class="col-lg-8 order-2 order-lg-1">
-                  <h3>Datos Verificados</h3>
-                  <p>Confía en información precisa y verificada:</p>
+                  <h3>Verified Data</h3>
+                  <p>Trust in accurate and verified information:</p>
                   <ul>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Fuentes oficiales
-                      contrastadas
+                      <i class="bi bi-check-circle-fill"></i> Verified official
+                      sources
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Metodología
-                      transparente
+                      <i class="bi bi-check-circle-fill"></i> Transparent
+                      methodology
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Actualizaciones
-                      periódicas
+                      <i class="bi bi-check-circle-fill"></i> Regular updates
                     </li>
                     <li>
-                      <i class="bi bi-check-circle-fill"></i> Control de calidad
-                      continuo
+                      <i class="bi bi-check-circle-fill"></i> Continuous quality
+                      control
                     </li>
                   </ul>
                 </div>
@@ -976,6 +924,7 @@
         </div>
       </section>
       <!-- /Features Section -->
+
       <!-- Divider -->
       <div class="container">
         <hr
@@ -989,60 +938,53 @@
       <section id="pricing" class="pricing pt-0">
         <div class="container" data-aos="fade-up">
           <div class="section-header">
-            <h2>Precios</h2>
+            <h2>Pricing</h2>
             <p>
-              Accede a datos de seguridad de España de forma gratuita o
-              contáctanos para soluciones empresariales personalizadas
+              Access Spain's security data for free or contact us for customized
+              business solutions
             </p>
           </div>
 
           <div class="row gy-4">
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <div class="pricing-item featured">
-                <h3>Acceso Gratuito</h3>
+                <h3>Free Access</h3>
                 <h4><sup>€</sup>0<span></span></h4>
                 <ul>
+                  <li><i class="bi bi-check"></i> Interactive security map</li>
                   <li>
-                    <i class="bi bi-check"></i> Mapa interactivo de seguridad
+                    <i class="bi bi-check"></i> Basic area data consultation
                   </li>
-                  <li>
-                    <i class="bi bi-check"></i> Consulta de datos básicos por
-                    zona
-                  </li>
-                  <li>
-                    <i class="bi bi-check"></i> Estadísticas en formato tabla
-                  </li>
-                  <li><i class="bi bi-check"></i> Actualización trimestral</li>
-                  <li><i class="bi bi-check"></i> Acceso web completo</li>
+                  <li><i class="bi bi-check"></i> Table format statistics</li>
+                  <li><i class="bi bi-check"></i> Quarterly updates</li>
+                  <li><i class="bi bi-check"></i> Full web access</li>
                 </ul>
                 <a
                   href="https://app.crimemapx.com"
                   class="buy-btn"
                   target="_blank"
-                  >Comenzar Ahora</a
+                  >Start Now</a
                 >
               </div>
             </div>
 
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
               <div class="pricing-item">
-                <h3>Soluciones Empresariales</h3>
-                <h4>Personalizado</h4>
+                <h3>Business Solutions</h3>
+                <h4>Custom</h4>
                 <ul>
-                  <li><i class="bi bi-check"></i> API dedicada</li>
+                  <li><i class="bi bi-check"></i> Dedicated API</li>
                   <li>
-                    <i class="bi bi-check"></i> Integración con tu plataforma
+                    <i class="bi bi-check"></i> Integration with your platform
                   </li>
-                  <li><i class="bi bi-check"></i> Informes detallados</li>
+                  <li><i class="bi bi-check"></i> Detailed reports</li>
+                  <li><i class="bi bi-check"></i> Complete historical data</li>
                   <li>
-                    <i class="bi bi-check"></i> Datos históricos completos
+                    <i class="bi bi-check"></i> Priority technical support
                   </li>
-                  <li>
-                    <i class="bi bi-check"></i> Soporte técnico prioritario
-                  </li>
-                  <li><i class="bi bi-check"></i> Análisis personalizado</li>
+                  <li><i class="bi bi-check"></i> Custom analysis</li>
                 </ul>
-                <a href="contact.html" class="buy-btn">Contactar</a>
+                <a href="contact-en.html" class="buy-btn">Contact Us</a>
               </div>
             </div>
           </div>
@@ -1050,14 +992,14 @@
       </section>
       <!-- /Pricing Section -->
 
-      <!-- Faq Section -->
+      <!-- FAQ Section -->
       <section id="faq" class="faq section">
         <div class="container" data-aos="fade-up">
           <div class="section-header">
-            <h2>Preguntas Frecuentes</h2>
+            <h2>Frequently Asked Questions</h2>
             <p>
-              Resolvemos tus dudas sobre CrimeMapX y nuestros servicios de
-              análisis de seguridad
+              We answer your questions about CrimeMapX and our security analysis
+              services
             </p>
           </div>
 
@@ -1070,13 +1012,12 @@
                   data-aos-delay="200"
                 >
                   <i class="faq-icon bi bi-question-circle"></i>
-                  <h3>¿De dónde proceden vuestros datos?</h3>
+                  <h3>Where does your data come from?</h3>
                   <div class="faq-content">
                     <p>
-                      Utilizamos datos oficiales del Ministerio del Interior y
-                      otras fuentes gubernamentales verificadas. Todos los datos
-                      son procesados y actualizados regularmente para garantizar
-                      su precisión y relevancia.
+                      We use official data from the Ministry of Interior and
+                      other verified government sources. All data is processed
+                      and regularly updated to ensure accuracy and relevance.
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
@@ -1084,13 +1025,12 @@
 
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                   <i class="faq-icon bi bi-question-circle"></i>
-                  <h3>¿Con qué frecuencia se actualizan los datos?</h3>
+                  <h3>How often is the data updated?</h3>
                   <div class="faq-content">
                     <p>
-                      Los datos básicos se actualizan trimestralmente,
-                      coincidiendo con las publicaciones oficiales. Los usuarios
-                      premium tienen acceso a actualizaciones más frecuentes y
-                      datos en tiempo real cuando están disponibles.
+                      Basic data is updated quarterly, coinciding with official
+                      publications. Premium users have access to more frequent
+                      updates and real-time data when available.
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
@@ -1098,14 +1038,13 @@
 
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
                   <i class="faq-icon bi bi-question-circle"></i>
-                  <h3>¿Cómo calculáis el índice de seguridad?</h3>
+                  <h3>How do you calculate the security index?</h3>
                   <div class="faq-content">
                     <p>
-                      Nuestro índice de seguridad se calcula mediante un
-                      algoritmo que considera múltiples factores: tipos de
-                      delitos, frecuencia, gravedad, población del área y
-                      tendencias históricas. Cada factor tiene un peso
-                      específico en el cálculo final.
+                      Our security index is calculated using an algorithm that
+                      considers multiple factors: types of crimes, frequency,
+                      severity, area population, and historical trends. Each
+                      factor has a specific weight in the final calculation.
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
@@ -1114,14 +1053,13 @@
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
                   <i class="faq-icon bi bi-question-circle"></i>
                   <h3>
-                    ¿Puedo integrar vuestros datos en mi web inmobiliaria?
+                    Can I integrate your data into my real estate website?
                   </h3>
                   <div class="faq-content">
                     <p>
-                      Sí, ofrecemos una API y widgets personalizables para
-                      integrar nuestros datos en portales inmobiliarios.
-                      Contacta con nuestro equipo comercial para conocer las
-                      opciones disponibles y obtener una demo.
+                      Yes, we offer an API and customizable widgets to integrate
+                      our data into real estate portals. Contact our sales team
+                      to learn about available options and get a demo.
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
@@ -1130,15 +1068,14 @@
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
                   <i class="faq-icon bi bi-question-circle"></i>
                   <h3>
-                    ¿Los datos son fiables para tomar decisiones inmobiliarias?
+                    Is the data reliable for making real estate decisions?
                   </h3>
                   <div class="faq-content">
                     <p>
-                      Sí, nuestros datos son utilizados por profesionales
-                      inmobiliarios en toda España. No obstante, recomendamos
-                      usar nuestra información como una herramienta más en el
-                      proceso de toma de decisiones, junto con otros factores
-                      relevantes.
+                      Yes, our data is used by real estate professionals
+                      throughout Spain. However, we recommend using our
+                      information as one tool in the decision-making process,
+                      along with other relevant factors.
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
@@ -1148,50 +1085,49 @@
           </div>
         </div>
       </section>
-      <!-- /Faq Section -->
+      <!-- /FAQ Section -->
     </main>
 
     <footer id="footer" class="footer dark-background">
       <div class="container footer-top">
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-about">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="index-en.html" class="logo d-flex align-items-center">
               <span class="sitename">CrimeMapX</span>
             </a>
             <p>
-              CrimeMapX es una plataforma web que proporciona información sobre
-              la seguridad en diferentes zonas del país. Usando datos curados
-              por la propia plataforma, ofrecemos información actualizada y
-              precisa sobre la seguridad en España.
+              CrimeMapX is a web platform that provides security information for
+              different areas of the country. Using data curated by the platform
+              itself, we offer up-to-date and accurate information about
+              security in Spain.
             </p>
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
-            <h4>Enlaces Útiles</h4>
+            <h4>Useful Links</h4>
             <ul>
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="#about">Sobre Nosotros</a></li>
-              <li><a href="#service">Servicios</a></li>
-              <li><a href="privacy.html">Política de privacidad</a></li>
-              <!-- <li><a href="terms.html">Términos de servicio</a></li> -->
+              <li><a href="index-en.html">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#service">Services</a></li>
+              <li><a href="privacy-en.html">Privacy Policy</a></li>
             </ul>
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
-            <h4>Nuestros Servicios</h4>
+            <h4>Our Services</h4>
             <ul>
-              <li><a href="#service">Mapa de Seguridad</a></li>
-              <li><a href="#service">Soluciones Inmobiliarias</a></li>
-              <li><a href="#service">Informes Profesionales</a></li>
-              <li><a href="#service">Partnerships Estratégicos</a></li>
-              <li><a href="#service">Análisis Avanzado</a></li>
+              <li><a href="#service">Security Map</a></li>
+              <li><a href="#service">Real Estate Solutions</a></li>
+              <li><a href="#service">Professional Reports</a></li>
+              <li><a href="#service">Strategic Partnerships</a></li>
+              <li><a href="#service">Advanced Analysis</a></li>
             </ul>
           </div>
 
           <div
             class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
           >
-            <h4>Contacto</h4>
+            <h4>Contact</h4>
             <p class="mt-4">
               <strong>Email:</strong>
               <a
@@ -1209,7 +1145,7 @@
         <p>
           © <span>Copyright</span>
           <strong class="px-1 sitename">CrimeMapX</strong>
-          <span>Todos los derechos reservados</span>
+          <span>All rights reserved</span>
         </p>
       </div>
     </footer>
