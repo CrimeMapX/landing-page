@@ -1320,6 +1320,10 @@ section,
   padding-right: 3px;
 }
 
+.pricing ul i.color-orange {
+  color: #ffa500;
+}
+
 .pricing ul .na {
   color: color-mix(in srgb, var(--default-color), transparent 60%);
 }

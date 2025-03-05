@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Home - CrimeMapX | Security Map of Spain</title>
+    <title>
+      CrimeMapX - Security Analysis in Spain | Insights from Crime Data
+    </title>
     <meta
       name="description"
       content="CrimeMapX offers detailed security analysis in Spain with up-to-date official data. Interactive maps, crime rates, and statistics for real estate and travelers. Check your area's security level for free."
@@ -40,6 +42,10 @@
     />
     <link rel="alternate" hreflang="es" href="https://crimemapx.com" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="CrimeMapX" />
+    <!-- Geographic metadata -->
+    <meta name="geo.region" content="ES" />
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon" />
@@ -150,6 +156,38 @@
       rel="stylesheet"
       href="https://sibforms.com/forms/end-form/build/sib-styles.css"
     />
+
+    <!-- Add structured data for SoftwareApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "CrimeMapX",
+        "image": "https://crimemapx.com/assets/img/logo.png",
+        "@id": "https://crimemapx.com",
+        "url": "https://crimemapx.com",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "description": "Security analysis in Spain based on real crime data. Perfect for real estate and travelers."
+      }
+    </script>
+
+    <!-- Add structured data for WebSite -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "CrimeMapX",
+        "url": "https://crimemapx.com",
+        "logo": "https://crimemapx.com/assets/img/logo.png",
+        "description": "Security analysis in Spain based on real crime data. Perfect for real estate and travelers."
+      }
+    </script>
   </head>
 
   <body class="index-page">
@@ -242,7 +280,7 @@
                       type="email"
                       name="EMAIL"
                       class="form-control"
-                      placeholder="Enter your email to receive updates"
+                      placeholder="Enter your email to receive a gift and updates"
                       required
                     />
                     <button type="submit" class="btn btn-primary">
@@ -1001,7 +1039,11 @@
           </div>
 
           <div class="row gy-4">
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="col-xl-4 col-lg-6 col-md-6 col-sm-12"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <div class="pricing-item featured">
                 <h3>Free Access</h3>
                 <h4><sup>€</sup>0<span></span></h4>
@@ -1011,35 +1053,83 @@
                     <i class="bi bi-check"></i> Basic area data consultation
                   </li>
                   <li><i class="bi bi-check"></i> Table format statistics</li>
-                  <li><i class="bi bi-check"></i> Quarterly updates</li>
-                  <li><i class="bi bi-check"></i> Full web access</li>
+                  <li>
+                    <i class="bi bi-exclamation-triangle color-orange"></i> Only
+                    current year data
+                  </li>
+                  <li>
+                    <i class="bi bi-exclamation-triangle color-orange"></i> Only
+                    10 different daily queries
+                  </li>
+                </ul>
+                <!--<a
+                  href="https://app.crimemapx.com"
+                  class="buy-btn"
+                  target="_blank"
+                  >Start Now</a
+                >-->
+              </div>
+            </div>
+
+            <div
+              class="col-xl-4 col-lg-6 col-md-6 col-sm-12"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="pricing-item featured">
+                <h3>Premium <span class="badge bg-success">FREE</span></h3>
+                <h4>
+                  <s><sup>€</sup>10/month</s>
+                </h4>
+                <p class="text-success small mb-3">*Limited-time offer</p>
+                <h4 class="text-success">€0</h4>
+                <ul>
+                  <li>
+                    <i class="bi bi-check"></i> Everything in the free plan
+                  </li>
+                  <li><i class="bi bi-check"></i> Complete historical data</li>
+                  <li><i class="bi bi-check"></i> Security projections</li>
+                  <li><i class="bi bi-check"></i> Unlimited queries</li>
+                  <li><i class="bi bi-check"></i> Export reports</li>
+                  <li><i class="bi bi-check"></i> Custom alerts</li>
+                  <li>
+                    <i class="bi bi-check"></i> Personalized insights and
+                    graphics
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i> Cross-referenced with other
+                    sources
+                  </li>
                 </ul>
                 <a
                   href="https://app.crimemapx.com"
                   class="buy-btn"
                   target="_blank"
-                  >Start Now</a
+                  >Access for free</a
                 >
               </div>
             </div>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="col-xl-4 col-lg-12 col-md-12 col-sm-12"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <div class="pricing-item">
-                <h3>Business Solutions</h3>
-                <h4>Custom</h4>
+                <h3>Corporate Solutions</h3>
+                <h4>Customized</h4>
                 <ul>
                   <li><i class="bi bi-check"></i> Dedicated API</li>
                   <li>
                     <i class="bi bi-check"></i> Integration with your platform
                   </li>
                   <li><i class="bi bi-check"></i> Detailed reports</li>
-                  <li><i class="bi bi-check"></i> Complete historical data</li>
                   <li>
-                    <i class="bi bi-check"></i> Priority technical support
+                    <i class="bi bi-check"></i> Technical support priority
                   </li>
-                  <li><i class="bi bi-check"></i> Custom analysis</li>
+                  <li><i class="bi bi-check"></i> Personalized analysis</li>
                 </ul>
-                <a href="contact-en.html" class="buy-btn">Contact Us</a>
+                <a href="contact.html" class="buy-btn">Contact us</a>
               </div>
             </div>
           </div>

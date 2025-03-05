@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Inicio - CrimeMapX | Mapa de Seguridad en España</title>
+    <title>
+      CrimeMapX - Análisis de Seguridad en España | Datos de Criminalidad
+    </title>
     <meta
       name="description"
       content="CrimeMapX ofrece análisis detallado de seguridad en España con datos oficiales actualizados. Mapas interactivos, índices de criminalidad y estadísticas para inmobiliarias y viajeros. Consulta gratis el nivel de seguridad de tu zona."
@@ -46,6 +48,10 @@
       href="https://crimemapx.com/index-en.html"
     />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="CrimeMapX" />
+    <!-- Geographic metadata -->
+    <meta name="geo.region" content="ES" />
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon" />
@@ -156,6 +162,38 @@
       rel="stylesheet"
       href="https://sibforms.com/forms/end-form/build/sib-styles.css"
     />
+
+    <!-- Add structured data for SoftwareApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "CrimeMapX",
+        "image": "https://crimemapx.com/assets/img/logo.png",
+        "@id": "https://crimemapx.com",
+        "url": "https://crimemapx.com",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "description": "Plataforma de análisis de seguridad en España basada en datos reales de criminalidad"
+      }
+    </script>
+
+    <!-- Add structured data for Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CrimeMapX",
+        "url": "https://crimemapx.com",
+        "logo": "https://crimemapx.com/assets/img/logo.png",
+        "description": "Análisis de seguridad en España basado en datos reales de criminalidad."
+      }
+    </script>
   </head>
 
   <body class="index-page">
@@ -253,7 +291,7 @@
                       type="email"
                       name="EMAIL"
                       class="form-control"
-                      placeholder="Introduce tu email para recibir actualizaciones"
+                      placeholder="Introduce tu email para recibir un regalo y actualizaciones"
                       required
                     />
                     <button type="submit" class="btn btn-primary">
@@ -1031,7 +1069,11 @@
           </div>
 
           <div class="row gy-4">
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="col-xl-4 col-lg-6 col-md-6 col-sm-12"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <div class="pricing-item featured">
                 <h3>Acceso Gratuito</h3>
                 <h4><sup>€</sup>0<span></span></h4>
@@ -1046,19 +1088,68 @@
                   <li>
                     <i class="bi bi-check"></i> Estadísticas en formato tabla
                   </li>
-                  <li><i class="bi bi-check"></i> Actualización trimestral</li>
-                  <li><i class="bi bi-check"></i> Acceso web completo</li>
+                  <li>
+                    <i class="bi bi-exclamation-triangle color-orange"></i> Solo
+                    datos del año actual
+                  </li>
+                  <li>
+                    <i class="bi bi-exclamation-triangle color-orange"></i> Solo
+                    10 consultas distintas diarias
+                  </li>
+                </ul>
+                <!--<a
+                  href="https://app.crimemapx.com"
+                  class="buy-btn"
+                  target="_blank"
+                  >Comenzar Ahora</a
+                >-->
+              </div>
+            </div>
+            <div
+              class="col-xl-4 col-lg-6 col-md-6 col-sm-12"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="pricing-item featured">
+                <h3>Premium <span class="badge bg-success">GRATIS</span></h3>
+                <h4>
+                  <s><sup>€</sup>10/mes</s>
+                </h4>
+                <p class="text-success small mb-3">
+                  *Oferta de lanzamiento por tiempo limitado
+                </p>
+                <h4 class="text-success">€0</h4>
+                <ul>
+                  <li><i class="bi bi-check"></i> Todo lo del plan gratuito</li>
+                  <li>
+                    <i class="bi bi-check"></i> Datos históricos completos
+                  </li>
+                  <li><i class="bi bi-check"></i> Proyecciones de seguridad</li>
+                  <li><i class="bi bi-check"></i> Consultas ilimitadas</li>
+                  <li><i class="bi bi-check"></i> Exportación de informes</li>
+                  <li><i class="bi bi-check"></i> Alertas personalizadas</li>
+                  <li>
+                    <i class="bi bi-check"></i> Insights y gráficos
+                    personalizados
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i> Datos cruzados con otras fuentes
+                  </li>
                 </ul>
                 <a
                   href="https://app.crimemapx.com"
                   class="buy-btn"
                   target="_blank"
-                  >Comenzar Ahora</a
+                  >Acceder Gratis</a
                 >
               </div>
             </div>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="col-xl-4 col-lg-12 col-md-12 col-sm-12"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <div class="pricing-item">
                 <h3>Soluciones Empresariales</h3>
                 <h4>Personalizado</h4>
@@ -1068,9 +1159,6 @@
                     <i class="bi bi-check"></i> Integración con tu plataforma
                   </li>
                   <li><i class="bi bi-check"></i> Informes detallados</li>
-                  <li>
-                    <i class="bi bi-check"></i> Datos históricos completos
-                  </li>
                   <li>
                     <i class="bi bi-check"></i> Soporte técnico prioritario
                   </li>
@@ -1280,19 +1368,5 @@
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/newsletter.js"></script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "CrimeMapX",
-        "url": "https://crimemapx.com",
-        "logo": "https://crimemapx.com/assets/img/logo.png",
-        "description": "Análisis de seguridad en España basado en datos reales de criminalidad.",
-        "sameAs": [
-          "https://twitter.com/crimemapx",
-          "https://linkedin.com/company/crimemapx"
-        ]
-      }
-    </script>
   </body>
 </html>
