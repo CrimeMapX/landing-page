@@ -14,6 +14,7 @@ const onSubmit = (event) => async () => {
   sent.classList.remove("d-block");
   error.classList.remove("d-block");
   loading.classList.add("d-block");
+
   fetch(url + "?isAjax=1", {
     method: "POST",
     body: data,
@@ -48,7 +49,6 @@ async function handleSubmit(event) {
   event.preventDefault();
 
   const email = event.target.EMAIL.value;
-  const optIn = event.target.OPT_IN?.checked;
   const formContainer = document.getElementById("subscribe-form-container");
   const error = formContainer.querySelector(".error-message");
 
@@ -57,13 +57,6 @@ async function handleSubmit(event) {
   if (!emailRegex.test(email)) {
     error.classList.add("d-block");
     error.innerHTML = "Por favor, introduce un email válido.";
-    return;
-  }
-
-  // Validate opt-in if it exists
-  if (event.target.OPT_IN && !optIn) {
-    error.classList.add("d-block");
-    error.innerHTML = "Por favor, acepta los términos y condiciones.";
     return;
   }
 

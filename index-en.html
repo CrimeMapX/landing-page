@@ -212,7 +212,7 @@
               <ul>
                 <li><a href="#featured-services">Featured Services</a></li>
                 <li><a href="#service">All Services</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <!-- <li><a href="#pricing">Pricing</a></li> -->
               </ul>
             </li>
             <li><a href="#about">About Us</a></li>
@@ -231,12 +231,8 @@
           >
         </div>
 
-        <a
-          class="btn-getstarted"
-          href="https://app.crimemapx.com"
-          target="_blank"
-        >
-          ACCESS APP
+        <a class="btn-getstarted" href="#hero-form-container">
+          REQUEST ACCESS
         </a>
       </div>
     </header>
@@ -259,84 +255,63 @@
               <h2 data-aos="fade-up">
                 Smart Security Data for Businesses and Individuals in Spain
               </h2>
-              <p data-aos="fade-up" data-aos-delay="100">
-                Discover the security level of any area in Spain with real and
-                updated data. Our unique algorithm provides an accurate security
-                score, perfect for real estate decisions and travel planning.
-              </p>
-              <div class="php-email-form" id="subscribe-form-container">
-                <form
-                  action
-                  data-type="subscription"
-                  method="POST"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                  id="subscribe-form"
-                >
-                  <div
-                    class="form-container form-search d-flex align-items-stretch mb-3"
+              <div id="hero-form-container">
+                <p data-aos="fade-up" data-aos-delay="100">
+                  Discover the security level of any area in Spain with real and
+                  updated data. Our unique algorithm provides an accurate
+                  security score, perfect for real estate decisions and travel
+                  planning.
+                </p>
+                <div class="php-email-form" id="subscribe-form-container">
+                  <form
+                    action
+                    data-type="subscription"
+                    method="POST"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    id="subscribe-form"
                   >
-                    <input
-                      type="email"
-                      name="EMAIL"
-                      class="form-control"
-                      placeholder="Enter your email to receive a gift and updates"
-                      required
-                    />
-                    <button type="submit" class="btn btn-primary">
-                      Subscribe
-                    </button>
-
-                    <input
-                      type="text"
-                      name="email_address_check"
-                      value=""
-                      class="input--hidden"
-                    />
-                    <input type="hidden" name="locale" value="en" />
-                    <div style="padding: 8px 0">
-                      <div
-                        class="g-recaptcha-v3"
-                        data-sitekey="6Lc4A-AqAAAAACtE925t9msdgPZ_mAuQuAnvaU2H"
-                        style="display: none"
-                      ></div>
+                    <div class="early-access-info">
+                      <i class="bi bi-envelope"></i> By submitting your email,
+                      you will receive early access to our platform and a
+                      special gift.
                     </div>
-                  </div>
-                  <div class="entry__choice">
-                    <label class="form-check-label">
+                    <div
+                      class="form-container form-search d-flex align-items-stretch mb-3"
+                    >
                       <input
-                        type="checkbox"
-                        class="input_replaced form-check-input"
-                        value="1"
-                        id="OPT_IN"
-                        name="OPT_IN"
-                        style="width: 14px; height: 14px"
+                        type="email"
+                        name="EMAIL"
+                        class="form-control"
+                        placeholder="Enter your email"
+                        required
                       />
-                      <span
-                        class="checkbox checkbox_tick_positive"
-                        style="margin-left: 0px"
-                      ></span>
-                      <span
-                        style="
-                          font-size: 14px;
-                          text-align: left;
-                          font-family: Helvetica, sans-serif;
-                          color: #c0ccda;
-                          background-color: transparent;
-                        "
-                      >
-                        <p>
-                          I accept the terms and conditions and agree to receive
-                          newsletters.
-                        </p>
-                      </span>
-                    </label>
+                      <button type="submit" class="btn btn-primary">
+                        Request Access
+                      </button>
+
+                      <input
+                        type="text"
+                        name="email_address_check"
+                        value=""
+                        class="input--hidden"
+                      />
+                      <input type="hidden" name="locale" value="en" />
+                      <div style="padding: 8px 0">
+                        <div
+                          class="g-recaptcha-v3"
+                          data-sitekey="6Lc4A-AqAAAAACtE925t9msdgPZ_mAuQuAnvaU2H"
+                          style="display: none"
+                        ></div>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="loading">Loading...</div>
+                  <div class="error-message alert alert-danger"></div>
+                  <div class="sent-message alert alert-success">
+                    Request received! We will contact you soon with access
+                    details.
                   </div>
-                </form>
-                <div class="loading">Loading...</div>
-                <div class="error-message alert alert-danger"></div>
-                <div class="sent-message alert alert-success">
-                  Your message has been sent. Thank you!
                 </div>
               </div>
 
@@ -390,7 +365,7 @@
       <section class="extra-cta-section">
         <div class="container">
           <button class="btn btn-primary">
-            <a href="https://app.crimemapx.com" target="_blank">
+            <a href="#hero-form-container">
               <h3>LEARN MORE ABOUT CRIME IN SPAIN</h3>
             </a>
           </button>
@@ -700,11 +675,8 @@
                   informed decisions. Join thousands of users who already trust
                   CrimeMapX to evaluate security in Spain.
                 </p>
-                <a
-                  class="cta-btn"
-                  href="https://app.crimemapx.com"
-                  target="_blank"
-                  >Access Platform</a
+                <a class="cta-btn" href="#hero-form-container"
+                  >Request Access</a
                 >
               </div>
             </div>
@@ -1028,7 +1000,7 @@
       </div>
 
       <!-- Pricing Section -->
-      <section id="pricing" class="pricing pt-0">
+      <!---  <section id="pricing" class="pricing pt-0">
         <div class="container" data-aos="fade-up">
           <div class="section-header">
             <h2>Pricing</h2>
@@ -1062,12 +1034,6 @@
                     10 different daily queries
                   </li>
                 </ul>
-                <!--<a
-                  href="https://app.crimemapx.com"
-                  class="buy-btn"
-                  target="_blank"
-                  >Start Now</a
-                >-->
               </div>
             </div>
 
@@ -1101,11 +1067,8 @@
                     sources
                   </li>
                 </ul>
-                <a
-                  href="https://app.crimemapx.com"
-                  class="buy-btn"
-                  target="_blank"
-                  >Access for free</a
+                <a href="#hero-form-container" class="buy-btn"
+                  >Request Access</a
                 >
               </div>
             </div>
@@ -1134,7 +1097,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- /Pricing Section -->
 
       <!-- FAQ Section -->
