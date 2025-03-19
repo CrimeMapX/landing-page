@@ -274,15 +274,27 @@ h6 {
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
-@media (max-width: 1200px) {
-  .header .logo {
-    order: 1;
+@media (max-width: 468px) {
+  .header .btn-getstarted {
+    order: 2;
+    padding: 2px 7px;
+    margin: 0 10px;
+    font-size: 12px;
   }
+}
 
+@media (min-width: 468px) and (max-width: 1200px) {
   .header .btn-getstarted {
     order: 2;
     margin: 0 15px 0 0;
     padding: 6px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header .logo {
+    order: 1;
   }
 
   .header .navmenu {
@@ -1100,7 +1112,8 @@ section,
   margin-bottom: 0;
 }
 
-.about .pulsating-play-btn {
+.about .pulsating-play-btn,
+#video-about .pulsating-play-btn {
   position: absolute;
   left: calc(50% - 47px);
   top: calc(50% - 47px);
@@ -2125,17 +2138,14 @@ section {
     font-size: 20px;
   }
 }
-.header .btn-getstarted {
-  @media (max-width: 468px) {
-    margin-left: 0;
-    margin-right: 10px;
-    font-size: 12px;
-  }
-}
 
 .early-access-info {
   font-size: 15px;
   color: white;
   background-color: transparent;
   margin-bottom: 10px;
+}
+
+#video-about {
+  position: relative;
 }
