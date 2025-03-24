@@ -283,6 +283,12 @@ h6 {
   }
 }
 
+@media (min-width: 1201px) and (max-width: 1280px) {
+  .header .btn-getstarted {
+    margin-right: 15px;
+  }
+}
+
 @media (min-width: 468px) and (max-width: 1200px) {
   .header .btn-getstarted {
     order: 2;
@@ -944,7 +950,7 @@ section,
 .hero p {
   font-size: 15px;
   font-weight: 400;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .hero form .form-container {
@@ -2148,4 +2154,11 @@ section {
 
 #video-about {
   position: relative;
+  margin-top: 80px;
+}
+
+@media (max-width: 991px) {
+  #video-about {
+    margin-top: 0;
+  }
 }
