@@ -2081,6 +2081,10 @@ section,
   }
 }
 
+.linkedin-btn {
+  order: 4;
+}
+
 /*
 * I18n section
 */
