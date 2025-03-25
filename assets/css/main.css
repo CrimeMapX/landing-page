@@ -685,6 +685,7 @@ h6 {
 # Preloader
 --------------------------------------------------------------*/
 #preloader {
+  display: none;
   position: fixed;
   inset: 0;
   z-index: 9999;
@@ -2070,9 +2071,13 @@ section,
   width: 100%;
 }
 
-.extra-cta-section button h3 {
+.extra-cta-section button h5 {
+  color: var(--bs-btn-hover-bg);
+  padding: 8px;
+  margin: 0;
+}
+.extra-cta-section button h5:hover {
   color: white;
-  padding: 13px 13px 8px;
 }
 
 .logo-img {
