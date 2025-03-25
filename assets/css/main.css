@@ -2171,3 +2171,7 @@ section {
     margin-top: 0;
   }
 }
+
+.hero-cta-button {
+  margin: 40px 0;
+}
