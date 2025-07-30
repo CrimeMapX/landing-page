@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Video Test - CrimeMapX</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+        }
+        .info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .success {
+            background: #e8f5e8;
+            color: #2e7d32;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        button {
+            background: #007AFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>iOS Video Compatibility Test</h1>
+        
+        <div id="device-info" class="info">
+            <h3>Device Information</h3>
+            <p><strong>User Agent:</strong> <span id="user-agent"></span></p>
+            <p><strong>Platform:</strong> <span id="platform"></span></p>
+            <p><strong>iOS Device:</strong> <span id="ios-check"></span></p>
+            <p><strong>Connection:</strong> <span id="connection"></span></p>
+        </div>
+
+        <div class="test-section">
+            <h3>Test 1: Basic HTML5 Video</h3>
+            <video id="basic-video" controls playsinline webkit-playsinline>
+                <source src="assets/video/crimemapx-branding-es.mp4" type="video/mp4">
+                <p>Your browser doesn't support HTML5 video.</p>
+            </video>
+            <div id="basic-video-status"></div>
+            <button onclick="testBasicVideo()">Test Basic Video</button>
+        </div>
+
+        <div class="test-section">
+            <h3>Test 2: Video with iOS Attributes</h3>
+            <video id="ios-video" controls playsinline webkit-playsinline x-webkit-airplay="allow" preload="metadata">
+                <source src="assets/video/crimemapx-branding-es.mp4" type="video/mp4">
+                <p>Your browser doesn't support HTML5 video.</p>
+            </video>
+            <div id="ios-video-status"></div>
+            <button onclick="testIOSVideo()">Test iOS-Optimized Video</button>
+        </div>
+
+        <div class="test-section">
+            <h3>Test 3: GLightbox Integration</h3>
+            <a href="assets/video/crimemapx-branding-es.mp4" class="glightbox" data-type="video">
+                <button>Open Video in GLightbox</button>
+            </a>
+            <div id="glightbox-status"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>Video File Information</h3>
+            <button onclick="checkVideoFile()">Check Video File</button>
+            <div id="file-info"></div>
+        </div>
+
+        <div id="test-log" class="test-section">
+            <h3>Test Log</h3>
+            <div id="log-content"></div>
+        </div>
+    </div>
+
+    <!-- Include GLightbox for testing -->
+    <link rel="stylesheet" href="assets/vendor/glightbox/css/glightbox.min.css">
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+    <script>
+        // Initialize logging
+        const log = (message, type = 'info') => {
+            const logContent = document.getElementById('log-content');
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.className = type;
+            logEntry.innerHTML = `<strong>[${timestamp}]</strong> ${message}`;
+            logContent.appendChild(logEntry);
+            console.log(`[${timestamp}] ${message}`);
+        };
+
+        // Device information
+        document.getElementById('user-agent').textContent = navigator.userAgent;
+        document.getElementById('platform').textContent = navigator.platform;
+        document.getElementById('ios-check').textContent = /iPad|iPhone|iPod/.test(navigator.userAgent) ? 'Yes' : 'No';
+        document.getElementById('connection').textContent = navigator.connection ? 
+            `${navigator.connection.effectiveType} (${navigator.connection.downlink}Mbps)` : 'Unknown';
+
+        // Test basic video
+        function testBasicVideo() {
+            const video = document.getElementById('basic-video');
+            const status = document.getElementById('basic-video-status');
+            
+            log('Testing basic HTML5 video...');
+            
+            video.addEventListener('loadstart', () => {
+                log('Basic video: Load started', 'success');
+                status.innerHTML = '<div class="info">Loading started...</div>';
+            });
+            
+            video.addEventListener('canplay', () => {
+                log('Basic video: Can play', 'success');
+                status.innerHTML = '<div class="success">Video ready to play!</div>';
+            });
+            
+            video.addEventListener('error', (e) => {
+                log(`Basic video error: ${e.message || 'Unknown error'}`, 'error');
+                status.innerHTML = '<div class="error">Video failed to load</div>';
+            });
+            
+            video.load();
+        }
+
+        // Test iOS-optimized video
+        function testIOSVideo() {
+            const video = document.getElementById('ios-video');
+            const status = document.getElementById('ios-video-status');
+            
+            log('Testing iOS-optimized video...');
+            
+            video.addEventListener('loadstart', () => {
+                log('iOS video: Load started', 'success');
+                status.innerHTML = '<div class="info">Loading started...</div>';
+            });
+            
+            video.addEventListener('canplay', () => {
+                log('iOS video: Can play', 'success');
+                status.innerHTML = '<div class="success">iOS video ready to play!</div>';
+            });
+            
+            video.addEventListener('error', (e) => {
+                log(`iOS video error: ${e.message || 'Unknown error'}`, 'error');
+                status.innerHTML = '<div class="error">iOS video failed to load</div>';
+            });
+            
+            video.load();
+        }
+
+        // Check video file
+        async function checkVideoFile() {
+            const fileInfo = document.getElementById('file-info');
+            const videoUrl = 'assets/video/crimemapx-branding-es.mp4';
+            
+            try {
+                log('Checking video file...');
+                const response = await fetch(videoUrl, { method: 'HEAD' });
+                
+                if (response.ok) {
+                    const size = response.headers.get('content-length');
+                    const type = response.headers.get('content-type');
+                    const lastModified = response.headers.get('last-modified');
+                    
+                    fileInfo.innerHTML = `
+                        <div class="success">
+                            <h4>File Information:</h4>
+                            <p><strong>Status:</strong> ${response.status} ${response.statusText}</p>
+                            <p><strong>Size:</strong> ${size ? (size / 1024 / 1024).toFixed(2) + ' MB' : 'Unknown'}</p>
+                            <p><strong>Type:</strong> ${type || 'Unknown'}</p>
+                            <p><strong>Last Modified:</strong> ${lastModified || 'Unknown'}</p>
+                        </div>
+                    `;
+                    log('Video file check successful', 'success');
+                } else {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+            } catch (error) {
+                log(`Video file check failed: ${error.message}`, 'error');
+                fileInfo.innerHTML = `<div class="error">Failed to check video file: ${error.message}</div>`;
+            }
+        }
+
+        // Initialize GLightbox
+        const glightbox = GLightbox({
+            selector: '.glightbox',
+            onOpen: () => {
+                log('GLightbox opened', 'success');
+                document.getElementById('glightbox-status').innerHTML = '<div class="success">GLightbox opened successfully!</div>';
+            },
+            onClose: () => {
+                log('GLightbox closed', 'info');
+            }
+        });
+
+        // Initial load
+        log('Video test page loaded');
+        
+        // Check if HTTPS
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost') {
+            log('Warning: Not using HTTPS - this may cause iOS video issues', 'error');
+        }
+    </script>
+</body>
+</html> 

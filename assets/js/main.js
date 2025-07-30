@@ -147,6 +147,15 @@
           selected: 1,
           options: [0.5, 0.75, 1, 1.25, 1.5, 2],
         },
+        // Enhanced iOS compatibility
+        playsinline: true,
+        autopause: false,
+        resetOnEnd: false,
+        clickToPlay: true,
+        disableContextMenu: false,
+        loadSprite: true,
+        iconPrefix: 'plyr',
+        iconUrl: 'https://cdn.plyr.io/3.6.12/plyr.svg',
         youtube: {
           noCookie: true,
           rel: 0,
@@ -176,6 +185,27 @@
           video.setAttribute("x-webkit-airplay", "allow");
           video.setAttribute("controls", "");
           video.setAttribute("preload", "metadata");
+          video.setAttribute("muted", "false");
+          
+          // Add error handling for iOS
+          video.addEventListener('error', function(e) {
+            console.error('Video error on iOS:', e);
+            // Fallback: try to reload the video
+            setTimeout(() => {
+              if (this.readyState === 0) {
+                this.load();
+              }
+            }, 1000);
+          });
+          
+          // Handle loading states
+          video.addEventListener('loadstart', function() {
+            console.log('Video load started');
+          });
+          
+          video.addEventListener('canplay', function() {
+            console.log('Video can play');
+          });
         });
       }
     },
@@ -192,105 +222,151 @@
       // Add click handlers to video play buttons for better iOS compatibility
       document.querySelectorAll(".pulsating-play-btn").forEach((button) => {
         button.addEventListener("click", function (e) {
-          // Prevent default behavior and handle manually for iOS
-          e.preventDefault();
-
-          // Get the video URL from the href
+          // First try GLightbox, but have a fallback for iOS issues
           const videoUrl = this.getAttribute("href");
-
-          // Create a simple video modal for iOS
-          const modal = document.createElement("div");
-          modal.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-          `;
-
-          const video = document.createElement("video");
-          video.style.cssText = `
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-          `;
-          video.setAttribute("controls", "");
-          video.setAttribute("playsinline", "");
-          video.setAttribute("webkit-playsinline", "");
-          video.setAttribute("x-webkit-airplay", "allow");
-          video.setAttribute("preload", "metadata");
-          video.src = videoUrl;
-
-          const closeBtn = document.createElement("button");
-          closeBtn.innerHTML = "×";
-          closeBtn.style.cssText = `
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-            z-index: 10000;
-          `;
-
-          modal.appendChild(video);
-          modal.appendChild(closeBtn);
-          document.body.appendChild(modal);
-
-          // Close modal handlers
-          const closeModal = () => {
-            video.pause();
-            document.body.removeChild(modal);
-          };
-
-          closeBtn.addEventListener("click", closeModal);
-          modal.addEventListener("click", (e) => {
-            if (e.target === modal) closeModal();
-          });
-
-          // Try to play video after user interaction
-          video.addEventListener("canplay", () => {
-            video.play().catch((e) => {
-              console.log("Video play failed:", e);
-              // Show a fallback message if video fails to play
-              const fallbackMsg = document.createElement("div");
-              fallbackMsg.innerHTML = `
-                <div style="color: white; text-align: center; padding: 20px;">
-                  <p>Video playback not supported on this device.</p>
-                  <p><a href="${videoUrl}" target="_blank" style="color: #007bff;">Click here to download video</a></p>
-                </div>
-              `;
-              modal.appendChild(fallbackMsg);
-            });
-          });
-
-          // Handle video load errors
-          video.addEventListener("error", () => {
-            const errorMsg = document.createElement("div");
-            errorMsg.innerHTML = `
-              <div style="color: white; text-align: center; padding: 20px;">
-                <p>Unable to load video.</p>
-                <p><a href="${videoUrl}" target="_blank" style="color: #007bff;">Click here to download video</a></p>
-              </div>
-            `;
-            modal.appendChild(errorMsg);
+          
+          // Enhanced iOS video modal as fallback
+          button.addEventListener("error", function() {
+            e.preventDefault();
+            createIOSVideoModal(videoUrl);
           });
         });
       });
     }
+    
+    // Create iOS-optimized video modal
+    function createIOSVideoModal(videoUrl) {
+      // Remove any existing modal
+      const existingModal = document.querySelector('.ios-video-modal');
+      if (existingModal) {
+        existingModal.remove();
+      }
+
+      const modal = document.createElement("div");
+      modal.className = 'ios-video-modal';
+      modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.95);
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+      `;
+
+      const videoContainer = document.createElement("div");
+      videoContainer.style.cssText = `
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        max-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      `;
+
+      const video = document.createElement("video");
+      video.style.cssText = `
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        border-radius: 8px;
+      `;
+      
+      // Essential iOS attributes
+      video.setAttribute("controls", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "");
+      video.setAttribute("x-webkit-airplay", "allow");
+      video.setAttribute("preload", "metadata");
+      video.setAttribute("poster", "assets/img/about.jpg");
+      
+      // Multiple source formats for better compatibility
+      const mp4Source = document.createElement("source");
+      mp4Source.src = videoUrl;
+      mp4Source.type = "video/mp4";
+      video.appendChild(mp4Source);
+      
+      // Add error handling
+      video.addEventListener('error', function(e) {
+        console.error('Video failed to load:', e);
+        const errorMsg = document.createElement('div');
+        errorMsg.style.cssText = `
+          color: white;
+          text-align: center;
+          padding: 20px;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        `;
+        errorMsg.innerHTML = `
+          <h3>Video no disponible</h3>
+          <p>No se pudo cargar el video. <a href="${videoUrl}" target="_blank" style="color: #007AFF;">Descargar video</a></p>
+        `;
+        videoContainer.replaceChild(errorMsg, video);
+      });
+
+      const closeBtn = document.createElement("button");
+      closeBtn.innerHTML = "×";
+      closeBtn.style.cssText = `
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(0,0,0,0.7);
+        border: none;
+        color: white;
+        font-size: 30px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 100000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      `;
+
+      const closeModal = () => {
+        modal.remove();
+        document.body.style.overflow = '';
+      };
+
+      closeBtn.addEventListener("click", closeModal);
+      modal.addEventListener("click", function(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+
+      videoContainer.appendChild(video);
+      videoContainer.appendChild(closeBtn);
+      modal.appendChild(videoContainer);
+      document.body.appendChild(modal);
+
+      // Auto-play attempt (will only work if user initiated)
+      setTimeout(() => {
+        video.play().catch(e => console.log('Autoplay prevented:', e));
+      }, 100);
+    }
   }
 
-  // Initialize iOS video enhancement
-  window.addEventListener("load", enhanceIOSVideoPlayback);
+  /**
+   * Initialize everything when DOM is loaded
+   */
+  document.addEventListener('DOMContentLoaded', function() {
+    enhanceIOSVideoPlayback();
+    
+    // Log iOS detection for debugging
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+      console.log('iOS device detected - video enhancements activated');
+    }
+  });
 
   /**
    * Init swiper sliders

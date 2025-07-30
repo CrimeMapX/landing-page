@@ -1,0 +1,31 @@
+# Enable MIME type for video files
+AddType video/mp4 .mp4
+AddType video/webm .webm
+AddType video/ogg .ogv
+
+# Enable range requests for iOS video seeking
+Header set Accept-Ranges bytes
+
+# Enable compression for video files (but not too aggressive)
+<IfModule mod_deflate.c>
+    SetEnvIfNoCase Request_URI \
+        \.(?:gif|jpe?g|png|mp4|webm|ogv)$ no-gzip dont-vary
+</IfModule>
+
+# Cache video files for better performance
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresByType video/mp4 "access plus 1 month"
+    ExpiresByType video/webm "access plus 1 month"
+</IfModule>
+
+# Security headers
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+
+# Force HTTPS for iOS compatibility
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule> 
