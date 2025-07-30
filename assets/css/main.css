@@ -107,6 +107,47 @@ h6 {
   display: block;
   position: relative;
   overflow: hidden;
+  /* iOS Safari improvements */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* iOS Safari specific improvements */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .pulsating-play-btn {
+    /* Ensure proper rendering on iOS Safari */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+}
+
+/* Increase touch target on mobile devices */
+@media (max-width: 768px) {
+  .pulsating-play-btn {
+    width: 120px;
+    height: 120px;
+    /* Adjust positioning for larger button */
+    left: calc(50% - 60px) !important;
+    top: calc(50% - 60px) !important;
+  }
+
+  .pulsating-play-btn:before {
+    width: 150px;
+    height: 150px;
+    top: -15px;
+    left: -15px;
+  }
+
+  .pulsating-play-btn:after {
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 18px solid #fff;
+  }
 }
 
 .pulsating-play-btn:before {
