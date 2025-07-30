@@ -116,174 +116,84 @@
   new PureCounter();
 
   /**
-   * Initiate glightbox
+   * iOS detection function
    */
-  const glightbox = GLightbox({
-    selector: ".glightbox",
-    plyr: {
-      css: "https://cdn.plyr.io/3.6.12/plyr.css",
-      js: "https://cdn.plyr.io/3.6.12/plyr.js",
-      config: {
-        ratio: "16:9",
-        fullscreen: {
-          enabled: true,
-          iosNative: true,
-        },
-        controls: [
-          "play-large",
-          "play",
-          "progress",
-          "current-time",
-          "mute",
-          "volume",
-          "captions",
-          "settings",
-          "pip",
-          "airplay",
-          "fullscreen",
-        ],
-        settings: ["captions", "quality", "speed"],
-        speed: {
-          selected: 1,
-          options: [0.5, 0.75, 1, 1.25, 1.5, 2],
-        },
-        youtube: {
-          noCookie: true,
-          rel: 0,
-          showinfo: 0,
-          iv_load_policy: 3,
-        },
-        vimeo: {
-          byline: false,
-          portrait: false,
-          title: false,
-          transparent: false,
-        },
-      },
-    },
-    autoplayVideos: false, // Disable autoplay for iOS compatibility
-    autofocusVideos: false, // Disable autofocus for iOS compatibility
-    touchNavigation: true,
-    keyboardNavigation: true,
-    closeOnOutsideClick: true,
-    onOpen: () => {
-      // Add iOS-specific video handling
-      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-        const videoElements = document.querySelectorAll(".glightbox video");
-        videoElements.forEach((video) => {
-          video.setAttribute("playsinline", "");
-          video.setAttribute("webkit-playsinline", "");
-          video.setAttribute("x-webkit-airplay", "allow");
-          video.setAttribute("controls", "");
-          video.setAttribute("preload", "metadata");
-        });
-      }
-    },
-  });
+  function isIOSDevice() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent);
+  }
 
   /**
-   * iOS Video Playback Enhancement
+   * Initiate glightbox (only for non-iOS devices)
+   */
+  if (!isIOSDevice()) {
+    const glightbox = GLightbox({
+      selector: ".glightbox",
+      plyr: {
+        css: "https://cdn.plyr.io/3.6.12/plyr.css",
+        js: "https://cdn.plyr.io/3.6.12/plyr.js",
+        config: {
+          ratio: "16:9",
+          fullscreen: {
+            enabled: true,
+            iosNative: true,
+          },
+          controls: [
+            "play-large",
+            "play",
+            "progress",
+            "current-time",
+            "mute",
+            "volume",
+            "captions",
+            "settings",
+            "pip",
+            "airplay",
+            "fullscreen",
+          ],
+          settings: ["captions", "quality", "speed"],
+          speed: {
+            selected: 1,
+            options: [0.5, 0.75, 1, 1.25, 1.5, 2],
+          },
+          youtube: {
+            noCookie: true,
+            rel: 0,
+            showinfo: 0,
+            iv_load_policy: 3,
+          },
+          vimeo: {
+            byline: false,
+            portrait: false,
+            title: false,
+            transparent: false,
+          },
+        },
+      },
+      autoplayVideos: false,
+      autofocusVideos: false,
+      touchNavigation: true,
+      keyboardNavigation: true,
+      closeOnOutsideClick: true,
+    });
+  }
+
+  /**
+   * iOS Video Link Handler - Open in new tab with native player
    */
   function enhanceIOSVideoPlayback() {
-    // Check if it's iOS
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-
-    if (isIOS) {
-      // Add click handlers to video play buttons for better iOS compatibility
+    if (isIOSDevice()) {
+      // Handle all video play buttons on iOS
       document.querySelectorAll(".pulsating-play-btn").forEach((button) => {
         button.addEventListener("click", function (e) {
-          // Prevent default behavior and handle manually for iOS
+          // Prevent any default behavior
           e.preventDefault();
-
+          e.stopPropagation();
+          
           // Get the video URL from the href
           const videoUrl = this.getAttribute("href");
-
-          // Create a simple video modal for iOS
-          const modal = document.createElement("div");
-          modal.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-          `;
-
-          const video = document.createElement("video");
-          video.style.cssText = `
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-          `;
-          video.setAttribute("controls", "");
-          video.setAttribute("playsinline", "");
-          video.setAttribute("webkit-playsinline", "");
-          video.setAttribute("x-webkit-airplay", "allow");
-          video.setAttribute("preload", "metadata");
-          video.src = videoUrl;
-
-          const closeBtn = document.createElement("button");
-          closeBtn.innerHTML = "×";
-          closeBtn.style.cssText = `
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-            z-index: 10000;
-          `;
-
-          modal.appendChild(video);
-          modal.appendChild(closeBtn);
-          document.body.appendChild(modal);
-
-          // Close modal handlers
-          const closeModal = () => {
-            video.pause();
-            document.body.removeChild(modal);
-          };
-
-          closeBtn.addEventListener("click", closeModal);
-          modal.addEventListener("click", (e) => {
-            if (e.target === modal) closeModal();
-          });
-
-          // Try to play video after user interaction
-          video.addEventListener("canplay", () => {
-            video.play().catch((e) => {
-              console.log("Video play failed:", e);
-              // Show a fallback message if video fails to play
-              const fallbackMsg = document.createElement("div");
-              fallbackMsg.innerHTML = `
-                <div style="color: white; text-align: center; padding: 20px;">
-                  <p>Video playback not supported on this device.</p>
-                  <p><a href="${videoUrl}" target="_blank" style="color: #007bff;">Click here to download video</a></p>
-                </div>
-              `;
-              modal.appendChild(fallbackMsg);
-            });
-          });
-
-          // Handle video load errors
-          video.addEventListener("error", () => {
-            const errorMsg = document.createElement("div");
-            errorMsg.innerHTML = `
-              <div style="color: white; text-align: center; padding: 20px;">
-                <p>Unable to load video.</p>
-                <p><a href="${videoUrl}" target="_blank" style="color: #007bff;">Click here to download video</a></p>
-              </div>
-            `;
-            modal.appendChild(errorMsg);
-          });
+          
+          // Open video in new tab - let browser handle it natively
+          window.open(videoUrl, "_blank");
         });
       });
     }
