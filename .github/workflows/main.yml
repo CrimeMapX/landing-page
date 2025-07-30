@@ -1,0 +1,36 @@
+name: PR Preview Deploy
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .   # Cambia si tu web está en otra carpeta, por ej. "dist"
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        id: deployment
+
+      - name: Comment PR with Preview URL
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: |
+            🚀 Preview disponible en:
+            [${{ steps.deployment.outputs.page_url }}pr-${{ github.event.pull_request.number }}/]( ${{ steps.deployment.outputs.page_url }}pr-${{ github.event.pull_request.number }}/ )
