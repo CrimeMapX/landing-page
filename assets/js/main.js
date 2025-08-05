@@ -189,6 +189,7 @@
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
     if (isIOS) {
+      console.log("iOS/Android video playback enhancement enabled");
       // Add click handlers to video play buttons for better iOS compatibility
       document.querySelectorAll(".pulsating-play-btn").forEach((button) => {
         button.addEventListener("click", function (e) {
@@ -196,7 +197,7 @@
           e.preventDefault();
 
           // Get the video URL from the href
-          const videoUrl = this.getAttribute("href");
+          const videoUrl = "https://link.storjshare.io/s/jw6ag7bkei575tgkubd3m5x2ny3a/cmpx/cmpx_ad_video.mp4";
 
           // Create a simple video modal for iOS
           const modal = document.createElement("div");
