@@ -184,12 +184,12 @@
   /**
    * iOS Video Playback Enhancement
    */
+
   function enhanceIOSVideoPlayback() {
     // Check if it's iOS
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
     if (isIOS) {
-      console.log("iOS/Android video playback enhancement enabled");
       // Add click handlers to video play buttons for better iOS compatibility
       document.querySelectorAll(".pulsating-play-btn").forEach((button) => {
         button.addEventListener("click", function (e) {
@@ -197,7 +197,7 @@
           e.preventDefault();
 
           // Get the video URL from the href
-          const videoUrl = "https://link.storjshare.io/s/jw6ag7bkei575tgkubd3m5x2ny3a/cmpx/cmpx_ad_video.mp4";
+          const videoUrl = this.getAttribute("href");
 
           // Create a simple video modal for iOS
           const modal = document.createElement("div");
@@ -227,6 +227,7 @@
           video.setAttribute("webkit-playsinline", "");
           video.setAttribute("x-webkit-airplay", "allow");
           video.setAttribute("preload", "metadata");
+          console.log(videoUrl);
           video.src = videoUrl;
 
           const closeBtn = document.createElement("button");
@@ -311,6 +312,16 @@
   }
 
   window.addEventListener("load", initSwiper);
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    if (isIOS) {
+      const videoLink = document.getElementById('video-about-link');
+      if (videoLink) {
+        videoLink.setAttribute('href', 'https://link.storjshare.io/s/jw6ag7bkei575tgkubd3m5x2ny3a/cmpx/cmpx_ad_video.mp4');
+      }
+    }
+  });
 
   /**
    * Frequently Asked Questions Toggle
