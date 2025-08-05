@@ -313,16 +313,6 @@
 
   window.addEventListener("load", initSwiper);
 
-  document.addEventListener("DOMContentLoaded", function() {
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    if (isIOS) {
-      const videoLink = document.getElementById('video-about-link');
-      if (videoLink) {
-        videoLink.setAttribute('href', 'https://link.storjshare.io/s/jw6ag7bkei575tgkubd3m5x2ny3a/cmpx/cmpx_ad_video.mp4');
-      }
-    }
-  });
-
   /**
    * Frequently Asked Questions Toggle
    */
