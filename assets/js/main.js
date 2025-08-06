@@ -184,6 +184,7 @@
   /**
    * iOS Video Playback Enhancement
    */
+
   function enhanceIOSVideoPlayback() {
     // Check if it's iOS
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -226,6 +227,7 @@
           video.setAttribute("webkit-playsinline", "");
           video.setAttribute("x-webkit-airplay", "allow");
           video.setAttribute("preload", "metadata");
+          console.log(videoUrl);
           video.src = videoUrl;
 
           const closeBtn = document.createElement("button");
